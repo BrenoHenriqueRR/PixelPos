@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace SistemaMarques
 {
@@ -16,6 +18,7 @@ namespace SistemaMarques
         {
             InitializeComponent();
         }
+
 
         private void Form2_Load(object sender, EventArgs e)
         {
@@ -29,7 +32,73 @@ namespace SistemaMarques
 
         private void mktxbsenhafirme_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
-            txbsenha.PasswordChar = '*';
+           txbsenhafirme.PasswordChar = '*';
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Connection connection = new Connection();
+            SqlCommand sqlCommand = new SqlCommand();
+
+            sqlCommand.Connection = connection.ReturnConnection();
+            sqlCommand.CommandText = @"INSERT INTO TB_Cadastro VALUES 
+            (@NOME, @Data_de_nascimento, @email, @senha,@CPF, @Gender)"
+            ;
+
+            sqlCommand.Parameters.AddWithValue("@NOME", txbfistname.Text);
+            sqlCommand.Parameters.AddWithValue("@Data_de_nascimento", msktxbdate.Text);
+            sqlCommand.Parameters.AddWithValue("@email", txbemail.Text);
+            sqlCommand.Parameters.AddWithValue("@senha", txbsenha.Text);
+            sqlCommand.Parameters.AddWithValue("@CPF", msktxbcpf.Text);
+            if (cbfeminino.Checked)
+            {
+                sqlCommand.Parameters.AddWithValue("@Gender", cbfeminino.Text);
+            }
+            if (cbmasculino.Checked)
+            {
+                sqlCommand.Parameters.AddWithValue("@Gender", cbmasculino.Text);
+            }
+            if (cboutros.Checked)
+            {
+                sqlCommand.Parameters.AddWithValue("@Gender", cboutros.Text);
+            }
+            if (cbnaodizer.Checked)
+            {
+                sqlCommand.Parameters.AddWithValue("@Gender", cbnaodizer.Text);
+            }
+
+
+            try
+            {
+                //Insere o cliente
+                sqlCommand.ExecuteNonQuery();
+            }
+            catch (Exception err)
+            {
+                throw new Exception("Erro: Problemas ao inserir colaborador no banco.\n"
+                    + err.Message);
+            }
+            finally
+            {
+                connection.CloseConnection();
+            }
+            MessageBox.Show(
+                "Cadastrado com Sucesso",
+                "CADASTRO",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information
+                );
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbfirstname_Click(object sender, EventArgs e)
+        {
+
         }
     }
-}
+ }
+
