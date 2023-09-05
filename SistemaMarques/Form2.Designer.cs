@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.btcadastrar = new System.Windows.Forms.Button();
             this.lbCadastre_se = new System.Windows.Forms.Label();
             this.txbfistname = new System.Windows.Forms.TextBox();
             this.btnentrar = new System.Windows.Forms.Button();
             this.lbfirstname = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txbemail = new System.Windows.Forms.TextBox();
+            this.txbemailCadastrar = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.LBCPF = new System.Windows.Forms.Label();
@@ -43,25 +43,26 @@
             this.cbfeminino = new System.Windows.Forms.CheckBox();
             this.cbmasculino = new System.Windows.Forms.CheckBox();
             this.cboutros = new System.Windows.Forms.CheckBox();
-            this.cbnaodizer = new System.Windows.Forms.CheckBox();
             this.txbsenha = new System.Windows.Forms.TextBox();
             this.msktxbdate = new System.Windows.Forms.MaskedTextBox();
             this.txbsenhafirme = new System.Windows.Forms.TextBox();
             this.msktxbcpf = new System.Windows.Forms.MaskedTextBox();
+            this.cbmostrarsenha2 = new System.Windows.Forms.CheckBox();
+            this.cbmostrarsenha1 = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
-            // button1
+            // btcadastrar
             // 
-            this.button1.BackColor = System.Drawing.Color.DarkSlateBlue;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(49, 436);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(566, 37);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "CADASTRAR";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btcadastrar.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.btcadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btcadastrar.ForeColor = System.Drawing.Color.White;
+            this.btcadastrar.Location = new System.Drawing.Point(49, 436);
+            this.btcadastrar.Name = "btcadastrar";
+            this.btcadastrar.Size = new System.Drawing.Size(566, 37);
+            this.btcadastrar.TabIndex = 0;
+            this.btcadastrar.Text = "CADASTRAR";
+            this.btcadastrar.UseVisualStyleBackColor = false;
+            this.btcadastrar.Click += new System.EventHandler(this.button1_Click);
             // 
             // lbCadastre_se
             // 
@@ -75,9 +76,12 @@
             // 
             // txbfistname
             // 
+            this.txbfistname.AccessibleDescription = "";
+            this.txbfistname.AccessibleName = "";
+            this.txbfistname.ImeMode = System.Windows.Forms.ImeMode.On;
             this.txbfistname.Location = new System.Drawing.Point(49, 137);
             this.txbfistname.Name = "txbfistname";
-            this.txbfistname.Size = new System.Drawing.Size(212, 22);
+            this.txbfistname.Size = new System.Drawing.Size(231, 22);
             this.txbfistname.TabIndex = 2;
             this.txbfistname.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -92,6 +96,7 @@
             this.btnentrar.TabIndex = 3;
             this.btnentrar.Text = "Entrar";
             this.btnentrar.UseVisualStyleBackColor = false;
+            this.btnentrar.Click += new System.EventHandler(this.btnentrar_Click);
             // 
             // lbfirstname
             // 
@@ -114,12 +119,13 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "E-mail";
             // 
-            // txbemail
+            // txbemailCadastrar
             // 
-            this.txbemail.Location = new System.Drawing.Point(49, 216);
-            this.txbemail.Name = "txbemail";
-            this.txbemail.Size = new System.Drawing.Size(212, 22);
-            this.txbemail.TabIndex = 6;
+            this.txbemailCadastrar.Location = new System.Drawing.Point(49, 216);
+            this.txbemailCadastrar.Name = "txbemailCadastrar";
+            this.txbemailCadastrar.Size = new System.Drawing.Size(231, 22);
+            this.txbemailCadastrar.TabIndex = 6;
+            this.txbemailCadastrar.TextChanged += new System.EventHandler(this.txbemail_TextChanged);
             // 
             // label2
             // 
@@ -184,7 +190,7 @@
             // cbmasculino
             // 
             this.cbmasculino.AutoSize = true;
-            this.cbmasculino.Location = new System.Drawing.Point(205, 393);
+            this.cbmasculino.Location = new System.Drawing.Point(299, 393);
             this.cbmasculino.Name = "cbmasculino";
             this.cbmasculino.Size = new System.Drawing.Size(90, 20);
             this.cbmasculino.TabIndex = 19;
@@ -194,27 +200,18 @@
             // cboutros
             // 
             this.cboutros.AutoSize = true;
-            this.cboutros.Location = new System.Drawing.Point(358, 393);
+            this.cboutros.Location = new System.Drawing.Point(547, 393);
             this.cboutros.Name = "cboutros";
             this.cboutros.Size = new System.Drawing.Size(68, 20);
             this.cboutros.TabIndex = 20;
             this.cboutros.Text = "Outros";
             this.cboutros.UseVisualStyleBackColor = true;
             // 
-            // cbnaodizer
-            // 
-            this.cbnaodizer.AutoSize = true;
-            this.cbnaodizer.Location = new System.Drawing.Point(486, 393);
-            this.cbnaodizer.Name = "cbnaodizer";
-            this.cbnaodizer.Size = new System.Drawing.Size(126, 20);
-            this.cbnaodizer.TabIndex = 21;
-            this.cbnaodizer.Text = "Prefiro não dizer";
-            this.cbnaodizer.UseVisualStyleBackColor = true;
-            // 
             // txbsenha
             // 
             this.txbsenha.Location = new System.Drawing.Point(49, 309);
             this.txbsenha.Name = "txbsenha";
+            this.txbsenha.PasswordChar = '*';
             this.txbsenha.Size = new System.Drawing.Size(212, 22);
             this.txbsenha.TabIndex = 22;
             this.txbsenha.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
@@ -222,9 +219,9 @@
             // msktxbdate
             // 
             this.msktxbdate.Location = new System.Drawing.Point(400, 137);
-            this.msktxbdate.Mask = "   00/00/0000";
+            this.msktxbdate.Mask = "00/00/0000";
             this.msktxbdate.Name = "msktxbdate";
-            this.msktxbdate.Size = new System.Drawing.Size(135, 22);
+            this.msktxbdate.Size = new System.Drawing.Size(125, 22);
             this.msktxbdate.TabIndex = 23;
             this.msktxbdate.ValidatingType = typeof(System.DateTime);
             // 
@@ -232,27 +229,54 @@
             // 
             this.txbsenhafirme.Location = new System.Drawing.Point(400, 309);
             this.txbsenhafirme.Name = "txbsenhafirme";
+            this.txbsenhafirme.PasswordChar = '*';
             this.txbsenhafirme.Size = new System.Drawing.Size(212, 22);
             this.txbsenhafirme.TabIndex = 24;
+            this.txbsenhafirme.TextChanged += new System.EventHandler(this.txbsenhafirme_TextChanged);
             // 
             // msktxbcpf
             // 
             this.msktxbcpf.Location = new System.Drawing.Point(400, 216);
-            this.msktxbcpf.Mask = "00000000000";
+            this.msktxbcpf.Mask = "000.000.000-00";
             this.msktxbcpf.Name = "msktxbcpf";
-            this.msktxbcpf.Size = new System.Drawing.Size(135, 22);
+            this.msktxbcpf.Size = new System.Drawing.Size(125, 22);
             this.msktxbcpf.TabIndex = 25;
+            // 
+            // cbmostrarsenha2
+            // 
+            this.cbmostrarsenha2.AutoSize = true;
+            this.cbmostrarsenha2.BackColor = System.Drawing.SystemColors.Control;
+            this.cbmostrarsenha2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.cbmostrarsenha2.ForeColor = System.Drawing.SystemColors.Control;
+            this.cbmostrarsenha2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.cbmostrarsenha2.Location = new System.Drawing.Point(615, 313);
+            this.cbmostrarsenha2.Name = "cbmostrarsenha2";
+            this.cbmostrarsenha2.Size = new System.Drawing.Size(18, 17);
+            this.cbmostrarsenha2.TabIndex = 26;
+            this.cbmostrarsenha2.UseVisualStyleBackColor = false;
+            this.cbmostrarsenha2.CheckedChanged += new System.EventHandler(this.cbmostrarsenha2_CheckedChanged);
+            // 
+            // cbmostrarsenha1
+            // 
+            this.cbmostrarsenha1.AutoSize = true;
+            this.cbmostrarsenha1.Location = new System.Drawing.Point(262, 313);
+            this.cbmostrarsenha1.Name = "cbmostrarsenha1";
+            this.cbmostrarsenha1.Size = new System.Drawing.Size(18, 17);
+            this.cbmostrarsenha1.TabIndex = 27;
+            this.cbmostrarsenha1.UseVisualStyleBackColor = true;
+            this.cbmostrarsenha1.CheckedChanged += new System.EventHandler(this.cbmostrarsenha1_CheckedChanged);
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(645, 485);
+            this.Controls.Add(this.cbmostrarsenha2);
+            this.Controls.Add(this.cbmostrarsenha1);
             this.Controls.Add(this.msktxbcpf);
             this.Controls.Add(this.txbsenhafirme);
             this.Controls.Add(this.msktxbdate);
             this.Controls.Add(this.txbsenha);
-            this.Controls.Add(this.cbnaodizer);
             this.Controls.Add(this.cboutros);
             this.Controls.Add(this.cbmasculino);
             this.Controls.Add(this.cbfeminino);
@@ -261,13 +285,13 @@
             this.Controls.Add(this.LBCPF);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txbemail);
+            this.Controls.Add(this.txbemailCadastrar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbfirstname);
             this.Controls.Add(this.btnentrar);
             this.Controls.Add(this.txbfistname);
             this.Controls.Add(this.lbCadastre_se);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btcadastrar);
             this.Name = "Form2";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Form2_Load);
@@ -278,13 +302,13 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btcadastrar;
         private System.Windows.Forms.Label lbCadastre_se;
         private System.Windows.Forms.TextBox txbfistname;
         private System.Windows.Forms.Button btnentrar;
         private System.Windows.Forms.Label lbfirstname;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txbemail;
+        private System.Windows.Forms.TextBox txbemailCadastrar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label LBCPF;
@@ -293,10 +317,11 @@
         private System.Windows.Forms.CheckBox cbfeminino;
         private System.Windows.Forms.CheckBox cbmasculino;
         private System.Windows.Forms.CheckBox cboutros;
-        private System.Windows.Forms.CheckBox cbnaodizer;
         private System.Windows.Forms.TextBox txbsenha;
         private System.Windows.Forms.MaskedTextBox msktxbdate;
         private System.Windows.Forms.TextBox txbsenhafirme;
         private System.Windows.Forms.MaskedTextBox msktxbcpf;
+        private System.Windows.Forms.CheckBox cbmostrarsenha2;
+        private System.Windows.Forms.CheckBox cbmostrarsenha1;
     }
 }

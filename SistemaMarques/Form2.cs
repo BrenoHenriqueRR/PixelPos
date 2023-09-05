@@ -22,17 +22,17 @@ namespace SistemaMarques
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Normal;
+            
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
-            txbsenha.PasswordChar = '*';
+            
         }
 
         private void mktxbsenhafirme_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
-           txbsenhafirme.PasswordChar = '*';
+           
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -40,14 +40,14 @@ namespace SistemaMarques
             Connection connection = new Connection();
             SqlCommand sqlCommand = new SqlCommand();
 
+
             sqlCommand.Connection = connection.ReturnConnection();
             sqlCommand.CommandText = @"INSERT INTO TB_Cadastro VALUES 
-            (@NOME, @Data_de_nascimento, @email, @senha,@CPF, @Gender)"
-            ;
+            (@NOME,@Data_de_nascimento,@email,@senha,@CPF,@Gender)";
 
             sqlCommand.Parameters.AddWithValue("@NOME", txbfistname.Text);
             sqlCommand.Parameters.AddWithValue("@Data_de_nascimento", msktxbdate.Text);
-            sqlCommand.Parameters.AddWithValue("@email", txbemail.Text);
+            sqlCommand.Parameters.AddWithValue("@email", txbemailCadastrar.Text);
             sqlCommand.Parameters.AddWithValue("@senha", txbsenha.Text);
             sqlCommand.Parameters.AddWithValue("@CPF", msktxbcpf.Text);
             if (cbfeminino.Checked)
@@ -62,11 +62,6 @@ namespace SistemaMarques
             {
                 sqlCommand.Parameters.AddWithValue("@Gender", cboutros.Text);
             }
-            if (cbnaodizer.Checked)
-            {
-                sqlCommand.Parameters.AddWithValue("@Gender", cbnaodizer.Text);
-            }
-
 
             try
             {
@@ -96,6 +91,45 @@ namespace SistemaMarques
         }
 
         private void lbfirstname_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txbsenhafirme_TextChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void cbmostrarsenha1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbmostrarsenha1.Checked)
+            {
+                txbsenha.PasswordChar = '\0'; 
+            }
+            else
+            {
+                txbsenha.PasswordChar = '*'; 
+            }
+        }
+
+        private void cbmostrarsenha2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbmostrarsenha2.Checked)
+            {
+                txbsenhafirme.PasswordChar = '\0';
+            }
+            else
+            {
+                txbsenhafirme.PasswordChar = '*';
+            }
+        }
+
+        private void btnentrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void txbemail_TextChanged(object sender, EventArgs e)
         {
 
         }
