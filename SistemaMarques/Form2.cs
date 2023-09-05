@@ -39,20 +39,23 @@ namespace SistemaMarques
         {
             Connection connection = new Connection();
             SqlCommand sqlCommand = new SqlCommand();
+            string datanasc = msktxbdate.Text;
+            string senha1 = txbsenha.Text;
+            string senha2 = txbsenhafirme.Text;
 
-
+            DateTime.TryParseExact(datanasc, "dd/MM/yyyy", null, System.Globalization.DateTimeStyles.None, out DateTime dataConvertida);
             sqlCommand.Connection = connection.ReturnConnection();
             sqlCommand.CommandText = @"INSERT INTO TB_Cadastro VALUES 
             (@NOME,@Data_de_nascimento,@email,@senha,@CPF,@Gender)";
 
             sqlCommand.Parameters.AddWithValue("@NOME", txbfistname.Text);
-            sqlCommand.Parameters.AddWithValue("@Data_de_nascimento", msktxbdate.Text);
+            sqlCommand.Parameters.AddWithValue("@Data_de_nascimento", datanasc);
             sqlCommand.Parameters.AddWithValue("@email", txbemailCadastrar.Text);
             sqlCommand.Parameters.AddWithValue("@senha", txbsenha.Text);
             sqlCommand.Parameters.AddWithValue("@CPF", msktxbcpf.Text);
             if (cbfeminino.Checked)
             {
-                sqlCommand.Parameters.AddWithValue("@Gender", cbfeminino.Text);
+                 sqlCommand.Parameters.AddWithValue("@Gender", cbfeminino.Text);
             }
             if (cbmasculino.Checked)
             {
@@ -62,7 +65,15 @@ namespace SistemaMarques
             {
                 sqlCommand.Parameters.AddWithValue("@Gender", cboutros.Text);
             }
-
+            if(senha1 == senha2)
+                {
+                    MessageBox.Show(
+                        "Senha diferentes ,digite novamente!!",
+                        "",
+                         MessageBoxButtons.OK,
+                        MessageBoxIcon.Error
+                        );
+                }
             try
             {
                 //Insere o cliente
@@ -83,6 +94,7 @@ namespace SistemaMarques
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Information
                 );
+            this.Close();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
