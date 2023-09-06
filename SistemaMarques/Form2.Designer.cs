@@ -33,7 +33,7 @@
             this.txbfistname = new System.Windows.Forms.TextBox();
             this.btnentrar = new System.Windows.Forms.Button();
             this.lbfirstname = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbemailregister = new System.Windows.Forms.Label();
             this.txbemailCadastrar = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -109,15 +109,15 @@
             this.lbfirstname.Text = "Digite o seu Nome";
             this.lbfirstname.Click += new System.EventHandler(this.lbfirstname_Click);
             // 
-            // label1
+            // lbemailregister
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(46, 187);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 16);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "E-mail";
+            this.lbemailregister.AutoSize = true;
+            this.lbemailregister.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbemailregister.Location = new System.Drawing.Point(46, 187);
+            this.lbemailregister.Name = "lbemailregister";
+            this.lbemailregister.Size = new System.Drawing.Size(51, 16);
+            this.lbemailregister.TabIndex = 5;
+            this.lbemailregister.Text = "E-mail";
             // 
             // txbemailCadastrar
             // 
@@ -186,6 +186,7 @@
             this.cbfeminino.TabIndex = 18;
             this.cbfeminino.Text = "Feminino";
             this.cbfeminino.UseVisualStyleBackColor = true;
+            this.cbfeminino.CheckedChanged += new System.EventHandler(this.cbfeminino_CheckedChanged);
             // 
             // cbmasculino
             // 
@@ -196,6 +197,7 @@
             this.cbmasculino.TabIndex = 19;
             this.cbmasculino.Text = "Masculino";
             this.cbmasculino.UseVisualStyleBackColor = true;
+            this.cbmasculino.CheckedChanged += new System.EventHandler(this.cbmasculino_CheckedChanged);
             // 
             // cboutros
             // 
@@ -206,6 +208,7 @@
             this.cboutros.TabIndex = 20;
             this.cboutros.Text = "Outros";
             this.cboutros.UseVisualStyleBackColor = true;
+            this.cboutros.CheckedChanged += new System.EventHandler(this.cboutros_CheckedChanged);
             // 
             // txbsenha
             // 
@@ -227,6 +230,7 @@
             // 
             // txbsenhafirme
             // 
+            this.txbsenhafirme.BackColor = System.Drawing.Color.White;
             this.txbsenhafirme.Location = new System.Drawing.Point(400, 309);
             this.txbsenhafirme.Name = "txbsenhafirme";
             this.txbsenhafirme.PasswordChar = '*';
@@ -270,6 +274,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(645, 485);
             this.Controls.Add(this.cbmostrarsenha2);
             this.Controls.Add(this.cbmostrarsenha1);
@@ -286,7 +291,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txbemailCadastrar);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbemailregister);
             this.Controls.Add(this.lbfirstname);
             this.Controls.Add(this.btnentrar);
             this.Controls.Add(this.txbfistname);
@@ -307,7 +312,7 @@
         private System.Windows.Forms.TextBox txbfistname;
         private System.Windows.Forms.Button btnentrar;
         private System.Windows.Forms.Label lbfirstname;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbemailregister;
         private System.Windows.Forms.TextBox txbemailCadastrar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;

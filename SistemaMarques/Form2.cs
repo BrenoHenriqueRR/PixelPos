@@ -43,8 +43,9 @@ namespace SistemaMarques
             string senha1 = txbsenha.Text;
             string senha2 = txbsenhafirme.Text;
 
-            DateTime.TryParseExact(datanasc, "dd/MM/yyyy", null, System.Globalization.DateTimeStyles.None, out DateTime dataConvertida);
+           
             sqlCommand.Connection = connection.ReturnConnection();
+            DateTime.TryParseExact(datanasc, "dd/MM/yyyy", null, System.Globalization.DateTimeStyles.None, out DateTime dataConvertida);
             sqlCommand.CommandText = @"INSERT INTO TB_Cadastro VALUES 
             (@NOME,@Data_de_nascimento,@email,@senha,@CPF,@Gender)";
 
@@ -65,15 +66,28 @@ namespace SistemaMarques
             {
                 sqlCommand.Parameters.AddWithValue("@Gender", cboutros.Text);
             }
-            if(senha1 == senha2)
-                {
-                    MessageBox.Show(
-                        "Senha diferentes ,digite novamente!!",
-                        "",
-                         MessageBoxButtons.OK,
-                        MessageBoxIcon.Error
-                        );
-                }
+            if (senha1 != senha2)
+            {
+                MessageBox.Show(
+                    "Senhas diferentes ,digite novamente!!",
+                    "",
+                     MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                    );
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(txbemailCadastrar.Text))
+            {
+                // Altere a cor da Label para vermelho
+                lbemailregister.ForeColor = Color.Red;
+                MessageBox.Show(
+                            "Campos Vazios",
+                             "",
+                             MessageBoxButtons.OK,
+                             MessageBoxIcon.Error
+                             );
+                return;
+            }
             try
             {
                 //Insere o cliente
@@ -145,6 +159,34 @@ namespace SistemaMarques
         {
 
         }
+
+        private void cbfeminino_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbfeminino.Checked)
+            {
+                cbmasculino.Checked = false;
+                cboutros.Checked = false;
+            }
+
+        }
+
+        private void cbmasculino_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbmasculino.Checked)
+            {
+                cbfeminino.Checked = false;
+                cboutros.Checked = false;
+            }
+        }
+
+        private void cboutros_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cboutros.Checked)
+            {
+                cbfeminino.Checked = false;
+                cbmasculino.Checked = false;
+            }
+        }
     }
- }
+}
 
