@@ -15,10 +15,11 @@ C:\Users\breno\Source\Repos\BrenoKratos\SistemaMarques\SistemaMarques\bin\Debug\
 C:\Users\breno\Source\Repos\BrenoKratos\SistemaMarques\SistemaMarques\bin\Debug\SistemaMarques.pdb
 C:\Users\breno\Source\Repos\BrenoKratos\SistemaMarques\SistemaMarques\obj\Debug\SistemaMarques.csproj.AssemblyReference.cache
 C:\Users\breno\Source\Repos\BrenoKratos\SistemaMarques\SistemaMarques\obj\Debug\SistemaMarques.csproj.SuggestedBindingRedirects.cache
-C:\Users\breno\Source\Repos\BrenoKratos\SistemaMarques\SistemaMarques\obj\Debug\SistemaMarques.Form1.resources
-C:\Users\breno\Source\Repos\BrenoKratos\SistemaMarques\SistemaMarques\obj\Debug\SistemaMarques.Form2.resources
 C:\Users\breno\Source\Repos\BrenoKratos\SistemaMarques\SistemaMarques\obj\Debug\SistemaMarques.Properties.Resources.resources
 C:\Users\breno\Source\Repos\BrenoKratos\SistemaMarques\SistemaMarques\obj\Debug\SistemaMarques.csproj.GenerateResource.cache
 C:\Users\breno\Source\Repos\BrenoKratos\SistemaMarques\SistemaMarques\obj\Debug\SistemaMarques.csproj.CoreCompileInputs.cache
 C:\Users\breno\Source\Repos\BrenoKratos\SistemaMarques\SistemaMarques\obj\Debug\SistemaMarques.exe
 C:\Users\breno\Source\Repos\BrenoKratos\SistemaMarques\SistemaMarques\obj\Debug\SistemaMarques.pdb
+C:\Users\breno\Source\Repos\BrenoKratos\SistemaMarques\SistemaMarques\obj\Debug\SistemaMarques.Login.resources
+C:\Users\breno\Source\Repos\BrenoKratos\SistemaMarques\SistemaMarques\obj\Debug\SistemaMarques.Cadastro.resources
+C:\Users\breno\Source\Repos\BrenoKratos\SistemaMarques\SistemaMarques\obj\Debug\SistemaMarques.Biblioteca.resources

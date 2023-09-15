@@ -13,9 +13,9 @@ using System.Xml.Linq;
 
 namespace SistemaMarques
 {
-    public partial class Form2 : Form
+    public partial class Cadastro : Form
     {
-        public Form2()
+        public Cadastro()
         {
             InitializeComponent();
         }
@@ -23,7 +23,6 @@ namespace SistemaMarques
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
@@ -209,6 +208,11 @@ namespace SistemaMarques
         private void msktxbdate_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
 
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+            this.WindowState = FormWindowState.Normal;
         }
     }
 }

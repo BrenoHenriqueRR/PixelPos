@@ -1,6 +1,6 @@
 ﻿namespace SistemaMarques
 {
-    partial class Form1
+    partial class Login
     {
         /// <summary>
         /// Variável de designer necessária.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.Pncadastro = new System.Windows.Forms.Panel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.btncadastrar = new System.Windows.Forms.Button();
@@ -132,6 +133,7 @@
             this.txbsenhalogin.PasswordChar = '*';
             this.txbsenhalogin.Size = new System.Drawing.Size(364, 24);
             this.txbsenhalogin.TabIndex = 3;
+            this.txbsenhalogin.TextChanged += new System.EventHandler(this.txbsenhalogin_TextChanged);
             this.txbsenhalogin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbsenhalogin_KeyPress);
             // 
             // Lbsenha
@@ -165,14 +167,15 @@
             this.Lbemail.TabIndex = 0;
             this.Lbemail.Text = "E-mail";
             // 
-            // Form1
+            // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(448, 558);
             this.Controls.Add(this.Pncadastro);
-            this.Name = "Form1";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LERMNGAS";
             this.Load += new System.EventHandler(this.Form1_Load);
