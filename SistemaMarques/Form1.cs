@@ -72,5 +72,13 @@ namespace SistemaMarques
         {
 
         }
+
+        private void txbsenhalogin_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((Keys)e.KeyChar == Keys.Enter)
+            {
+                MessageBox.Show("");
+            }
+         }
     }
 }

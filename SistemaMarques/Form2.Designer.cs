@@ -227,6 +227,7 @@
             this.msktxbdate.Size = new System.Drawing.Size(125, 22);
             this.msktxbdate.TabIndex = 23;
             this.msktxbdate.ValidatingType = typeof(System.DateTime);
+            this.msktxbdate.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.msktxbdate_MaskInputRejected);
             // 
             // txbsenhafirme
             // 

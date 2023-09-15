@@ -90,6 +90,7 @@
             // 
             this.btAcessar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btAcessar.BackColor = System.Drawing.Color.Brown;
+            this.btAcessar.CausesValidation = false;
             this.btAcessar.ForeColor = System.Drawing.Color.White;
             this.btAcessar.Location = new System.Drawing.Point(45, 356);
             this.btAcessar.Name = "btAcessar";
@@ -131,6 +132,7 @@
             this.txbsenhalogin.PasswordChar = '*';
             this.txbsenhalogin.Size = new System.Drawing.Size(364, 24);
             this.txbsenhalogin.TabIndex = 3;
+            this.txbsenhalogin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbsenhalogin_KeyPress);
             // 
             // Lbsenha
             // 

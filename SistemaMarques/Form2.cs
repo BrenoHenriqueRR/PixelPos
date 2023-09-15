@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -39,18 +40,33 @@ namespace SistemaMarques
         {
             Connection connection = new Connection();
             SqlCommand sqlCommand = new SqlCommand();
-            string datanasc = msktxbdate.Text;
+
+            string data_nasc = msktxbdate.Text;
+            msktxbdate.TextChanged += (obj, args) =>
+            {
+                if (DateTime.TryParse(msktxbdate.Text, out DateTime data)){
+                    if (data.Month > 12)
+                    {
+                        MessageBox.Show("Mês inválido. Insira um mês de 1 a 12.");
+                        msktxbdate.Clear(); // Limpa o TextBox
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Data inválida. Insira uma data válida no formato correto.");
+                    msktxbdate.Clear(); // Limpa o TextBox
+                }
+            };
+
             string senha1 = txbsenha.Text;
             string senha2 = txbsenhafirme.Text;
-
            
             sqlCommand.Connection = connection.ReturnConnection();
-            DateTime.TryParseExact(datanasc, "dd/MM/yyyy", null, System.Globalization.DateTimeStyles.None, out DateTime dataConvertida);
             sqlCommand.CommandText = @"INSERT INTO TB_Cadastro VALUES 
             (@NOME,@Data_de_nascimento,@email,@senha,@CPF,@Gender)";
 
             sqlCommand.Parameters.AddWithValue("@NOME", txbfistname.Text);
-            sqlCommand.Parameters.AddWithValue("@Data_de_nascimento", datanasc);
+            sqlCommand.Parameters.AddWithValue("@Data_de_nascimento", msktxbdate.Text);
             sqlCommand.Parameters.AddWithValue("@email", txbemailCadastrar.Text);
             sqlCommand.Parameters.AddWithValue("@senha", txbsenha.Text);
             sqlCommand.Parameters.AddWithValue("@CPF", msktxbcpf.Text);
@@ -76,19 +92,21 @@ namespace SistemaMarques
                     );
                 return;
             }
+
             if (string.IsNullOrWhiteSpace(txbemailCadastrar.Text))
             {
-                // Altere a cor da Label para vermelho
+                
                 lbemailregister.ForeColor = Color.Red;
                 MessageBox.Show(
-                            "Campos Vazios",
+                            "Campos Vazios!!",
                              "",
                              MessageBoxButtons.OK,
                              MessageBoxIcon.Error
                              );
                 return;
             }
-            try
+
+                try
             {
                 //Insere o cliente
                 sqlCommand.ExecuteNonQuery();
@@ -187,6 +205,12 @@ namespace SistemaMarques
                 cbmasculino.Checked = false;
             }
         }
+
+        private void msktxbdate_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
     }
 }
+
 
