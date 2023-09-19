@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace SistemaMarques
 {
     public partial class Biblioteca : Form
@@ -24,7 +25,42 @@ namespace SistemaMarques
 
         private void Biblioteca_Load(object sender, EventArgs e)
         {
-          
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+               
+            }
+        }
+
+
+        public void chamarComputador(object sender, EventArgs e)
+        {
+            //meuComputadorToolStripMenuItem_Click(sender,e);
+        }
+
+            private void webBrowser1_DocumentCompleted_1(object sender, WebBrowserDocumentCompletedEventArgs e)
+        {
+
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void Biblioteca_Resize(object sender, EventArgs e)
+        {
+           
+        
+        }
+
+        private void pnBiblioteca_Resize(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -23,3 +23,4 @@ C:\Users\breno\Source\Repos\BrenoKratos\SistemaMarques\SistemaMarques\obj\Debug\
 C:\Users\breno\Source\Repos\BrenoKratos\SistemaMarques\SistemaMarques\obj\Debug\SistemaMarques.Login.resources
 C:\Users\breno\Source\Repos\BrenoKratos\SistemaMarques\SistemaMarques\obj\Debug\SistemaMarques.Cadastro.resources
 C:\Users\breno\Source\Repos\BrenoKratos\SistemaMarques\SistemaMarques\obj\Debug\SistemaMarques.Biblioteca.resources
+C:\Users\breno\Source\Repos\BrenoKratos\SistemaMarques\SistemaMarques\obj\Debug\SistemaMarques.Exibir.resources

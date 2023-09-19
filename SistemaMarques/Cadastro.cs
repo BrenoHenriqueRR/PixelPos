@@ -10,6 +10,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using System.Net;
+using System.Net.Mail;
 
 namespace SistemaMarques
 {
@@ -41,7 +43,7 @@ namespace SistemaMarques
             SqlCommand sqlCommand = new SqlCommand();
 
             string data_nasc = msktxbdate.Text;
-            msktxbdate.TextChanged += (obj, args) =>
+            /*msktxbdate.TextChanged += (obj, args) =>
             {
                 if (DateTime.TryParse(msktxbdate.Text, out DateTime data)){
                     if (data.Month > 12)
@@ -55,11 +57,11 @@ namespace SistemaMarques
                     MessageBox.Show("Data inválida. Insira uma data válida no formato correto.");
                     msktxbdate.Clear(); // Limpa o TextBox
                 }
-            };
+            };*/
 
             string senha1 = txbsenha.Text;
             string senha2 = txbsenhafirme.Text;
-           
+            string e_mail = txbemailCadastrar.Text;
             sqlCommand.Connection = connection.ReturnConnection();
             sqlCommand.CommandText = @"INSERT INTO TB_Cadastro VALUES 
             (@NOME,@Data_de_nascimento,@email,@senha,@CPF,@Gender)";
@@ -71,7 +73,7 @@ namespace SistemaMarques
             sqlCommand.Parameters.AddWithValue("@CPF", msktxbcpf.Text);
             if (cbfeminino.Checked)
             {
-                 sqlCommand.Parameters.AddWithValue("@Gender", cbfeminino.Text);
+                sqlCommand.Parameters.AddWithValue("@Gender", cbfeminino.Text);
             }
             if (cbmasculino.Checked)
             {
@@ -94,7 +96,7 @@ namespace SistemaMarques
 
             if (string.IsNullOrWhiteSpace(txbemailCadastrar.Text))
             {
-                
+
                 lbemailregister.ForeColor = Color.Red;
                 MessageBox.Show(
                             "Campos Vazios!!",
@@ -104,8 +106,33 @@ namespace SistemaMarques
                              );
                 return;
             }
+            try
+            {
+                string remetente = "SistemaBreno@outlook.com"; // Substitua pelo seu endereço de e-mail da Zoho Mail
+                string senha = "Ul100traman"; // Substitua pela senha da sua conta de e-mail
+                string destinatario = e_mail; // Substitua pelo endereço de e-mail do destinatário
+                string assunto = "Criação de conta:";
+                Html corpo = new Html();
+                string testehtml = corpo.TextoEmail();
 
-                try
+                SmtpClient client = new SmtpClient("smtp.office365.com");
+                client.Port = 587;
+                client.EnableSsl = true;
+                client.Credentials = new NetworkCredential(remetente, senha);
+
+                MailMessage message = new MailMessage(remetente, destinatario, assunto, testehtml);
+                message.IsBodyHtml = true;
+                client.Send(message);
+
+                MessageBox.Show("E-mail enviado com sucesso para: " + destinatario);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao enviar o email: " + ex.Message);
+            }
+        }
+
+            /*try
             {
                 //Insere o cliente
                 sqlCommand.ExecuteNonQuery();
@@ -126,11 +153,11 @@ namespace SistemaMarques
                 MessageBoxIcon.Information
                 );
             this.Close();
-        }
+        }*/
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        public void textBox1_TextChanged(object sender, EventArgs e)
         {
-
+            string name = txbfistname.Text;
         }
 
         private void lbfirstname_Click(object sender, EventArgs e)
@@ -214,6 +241,18 @@ namespace SistemaMarques
         {
             this.WindowState = FormWindowState.Normal;
         }
+
+        public int GerarCodigo()
+        {
+            Random random = new Random();
+            int codigo = random.Next(2154,5462);
+            return codigo;
+        }
+
+        public void acessar(object sender, EventArgs e)
+        {
+            button1_Click(sender,e);
+        } 
     }
 }
 

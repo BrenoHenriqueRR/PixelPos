@@ -67,7 +67,7 @@ namespace SistemaMarques
                   {
                      MessageBox.Show("Login bem-sucedido!");
                      Biblioteca biblioteca = new Biblioteca();
-                     Close();
+                     this.Visible = false;
                      biblioteca.Show();
                   }
                   else
