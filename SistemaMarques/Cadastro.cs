@@ -22,7 +22,6 @@ namespace SistemaMarques
             InitializeComponent();
         }
 
-
         private void Form2_Load(object sender, EventArgs e)
         {
         }
@@ -58,10 +57,12 @@ namespace SistemaMarques
                     msktxbdate.Clear(); // Limpa o TextBox
                 }
             };*/
-
+            string noume = txbfistname.Text;
             string senha1 = txbsenha.Text;
             string senha2 = txbsenhafirme.Text;
             string e_mail = txbemailCadastrar.Text;
+
+
             sqlCommand.Connection = connection.ReturnConnection();
             sqlCommand.CommandText = @"INSERT INTO TB_Cadastro VALUES 
             (@NOME,@Data_de_nascimento,@email,@senha,@CPF,@Gender)";
@@ -108,9 +109,9 @@ namespace SistemaMarques
             }
             try
             {
-                string remetente = "SistemaBreno@outlook.com"; // Substitua pelo seu endereço de e-mail da Zoho Mail
-                string senha = "Ul100traman"; // Substitua pela senha da sua conta de e-mail
-                string destinatario = e_mail; // Substitua pelo endereço de e-mail do destinatário
+                string remetente = "SistemaBreno@outlook.com";
+                string senha = "Ul100traman";
+                string destinatario = e_mail; 
                 string assunto = "Criação de conta:";
                 Html corpo = new Html();
                 string testehtml = corpo.TextoEmail();

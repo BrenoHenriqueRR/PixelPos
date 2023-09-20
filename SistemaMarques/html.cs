@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -13,14 +14,15 @@ namespace SistemaMarques
     class Html
     {
         public string TextoEmail() {
+            int i;
             Cadastro gerar = new Cadastro();
-            string name = gerar
-            string caminhoArquivoHTML =
+            i = gerar.GerarCodigo();
+            string HTMLEmail =
                 @"<!DOCTYPE html>
                     <html>
                     <head>LerMangas</head>
                     <meta charset=""utf-8"" /><body>
-                    <h1>Olá" + name + @"
+                    <h1>BOA NOITE!!</h1>
                     <h4>
                     <p>Um novo código de validação do email pessoal (PIN de segurança) foi criado.</p>
                     </h4>
@@ -32,12 +34,12 @@ namespace SistemaMarques
 
                     <h2>
                     Codigo de Validação:<p></p>
-                    "+ gerar.GerarCodigo() + @"
+                    "+ i + @"
                     </h2>
                 </body>
 
                 </html>";
-           return caminhoArquivoHTML;
+           return HTMLEmail;
          }
     }
 }
