@@ -12,16 +12,24 @@ using System.Windows.Forms;
 using System.Xml.Linq;
 using System.Net;
 using System.Net.Mail;
+using System.Globalization;
 
 namespace SistemaMarques
 {
     public partial class Cadastro : Form
     {
+        private int i;
         public Cadastro()
         {
             InitializeComponent();
+            this.teste();
         }
 
+        public int teste()
+        {
+            this.i = GerarCodigo();
+            return i;
+        }
         private void Form2_Load(object sender, EventArgs e)
         {
         }
@@ -115,6 +123,7 @@ namespace SistemaMarques
                 string assunto = "Criação de conta:";
                 Html corpo = new Html();
                 string testehtml = corpo.TextoEmail();
+                MessageBox.Show("numero = " + i);
 
                 SmtpClient client = new SmtpClient("smtp.office365.com");
                 client.Port = 587;
@@ -131,6 +140,9 @@ namespace SistemaMarques
             {
                 MessageBox.Show("Erro ao enviar o email: " + ex.Message);
             }
+
+            Validaremail validaremail = new Validaremail();
+            validaremail.ShowDialog();
         }
 
             /*try
