@@ -60,7 +60,6 @@
     <Compile Include="Exibir.Designer.cs">
       <DependentUpon>Exibir.cs</DependentUpon>
     </Compile>
-    <Compile Include="html.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>

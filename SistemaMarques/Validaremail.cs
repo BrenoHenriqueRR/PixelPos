@@ -12,14 +12,34 @@ namespace SistemaMarques
 {
     public partial class Validaremail : Form
     {
-        public Validaremail()
+        private int codigo;
+        private bool validarcodigo = false;
+        public Validaremail(int codigo)
         {
+            this.codigo = codigo;
             InitializeComponent();
+        }
+
+        public bool Validarcodigo
+        {
+            get { return validarcodigo; }
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
+            /*Cadastro cadastro = new Cadastro();
+            int t = cadastro.receba();
+            MessageBox.Show("" + t);
+            int number = Convert.ToInt32(textBox1.Text);
 
+            if (number == t)
+            {
+                this.Close();
+            }
+            else
+            {
+                return;
+            }*/
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -39,24 +59,23 @@ namespace SistemaMarques
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-           
+
 
         }
 
         private void btnproximo_Click(object sender, EventArgs e)
         {
-            Html i = new Html();
-            Cadastro cadastro = new Cadastro();
-            int n = cadastro.teste();
-            MessageBox.Show("" + n);
-            int number = Convert.ToInt32(textBox1.Text);
-            if (number == n)
+            if(int.Parse(textBox1.Text) == codigo)
             {
+                validarcodigo = true;
                 this.Close();
             }
             else
             {
-                return;
+                MessageBox.Show("Codigo Invalido!!", "Digite novamente",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                    );
             }
         }
     }

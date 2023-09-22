@@ -36,8 +36,8 @@
             this.lbfirstname = new System.Windows.Forms.Label();
             this.lbemailregister = new System.Windows.Forms.Label();
             this.txbemailCadastrar = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lbsenharegister = new System.Windows.Forms.Label();
+            this.lbdatanasc = new System.Windows.Forms.Label();
             this.LBCPF = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -130,25 +130,25 @@
             this.txbemailCadastrar.TabIndex = 6;
             this.txbemailCadastrar.TextChanged += new System.EventHandler(this.txbemail_TextChanged);
             // 
-            // label2
+            // lbsenharegister
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(44, 273);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 16);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Senha";
+            this.lbsenharegister.AutoSize = true;
+            this.lbsenharegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbsenharegister.Location = new System.Drawing.Point(44, 273);
+            this.lbsenharegister.Name = "lbsenharegister";
+            this.lbsenharegister.Size = new System.Drawing.Size(51, 16);
+            this.lbsenharegister.TabIndex = 7;
+            this.lbsenharegister.Text = "Senha";
             // 
-            // label3
+            // lbdatanasc
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(395, 99);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(148, 16);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Data de Nascimento";
+            this.lbdatanasc.AutoSize = true;
+            this.lbdatanasc.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbdatanasc.Location = new System.Drawing.Point(395, 99);
+            this.lbdatanasc.Name = "lbdatanasc";
+            this.lbdatanasc.Size = new System.Drawing.Size(148, 16);
+            this.lbdatanasc.TabIndex = 9;
+            this.lbdatanasc.Text = "Data de Nascimento";
             // 
             // LBCPF
             // 
@@ -288,8 +288,8 @@
             this.pnCadastro.Controls.Add(this.label6);
             this.pnCadastro.Controls.Add(this.label5);
             this.pnCadastro.Controls.Add(this.LBCPF);
-            this.pnCadastro.Controls.Add(this.label3);
-            this.pnCadastro.Controls.Add(this.label2);
+            this.pnCadastro.Controls.Add(this.lbdatanasc);
+            this.pnCadastro.Controls.Add(this.lbsenharegister);
             this.pnCadastro.Controls.Add(this.txbemailCadastrar);
             this.pnCadastro.Controls.Add(this.lbemailregister);
             this.pnCadastro.Controls.Add(this.lbfirstname);
@@ -329,8 +329,8 @@
         private System.Windows.Forms.Label lbfirstname;
         private System.Windows.Forms.Label lbemailregister;
         private System.Windows.Forms.TextBox txbemailCadastrar;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lbsenharegister;
+        private System.Windows.Forms.Label lbdatanasc;
         private System.Windows.Forms.Label LBCPF;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;

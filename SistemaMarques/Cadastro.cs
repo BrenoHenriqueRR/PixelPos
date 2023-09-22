@@ -13,23 +13,17 @@ using System.Xml.Linq;
 using System.Net;
 using System.Net.Mail;
 using System.Globalization;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace SistemaMarques
 {
     public partial class Cadastro : Form
     {
-        private int i;
         public Cadastro()
         {
             InitializeComponent();
-            this.teste();
         }
 
-        public int teste()
-        {
-            this.i = GerarCodigo();
-            return i;
-        }
         private void Form2_Load(object sender, EventArgs e)
         {
         }
@@ -44,10 +38,12 @@ namespace SistemaMarques
            
         }
 
+        private int i;
         private void button1_Click(object sender, EventArgs e)
         {
             Connection connection = new Connection();
             SqlCommand sqlCommand = new SqlCommand();
+            
 
             string data_nasc = msktxbdate.Text;
             /*msktxbdate.TextChanged += (obj, args) =>
@@ -65,7 +61,6 @@ namespace SistemaMarques
                     msktxbdate.Clear(); // Limpa o TextBox
                 }
             };*/
-            string noume = txbfistname.Text;
             string senha1 = txbsenha.Text;
             string senha2 = txbsenhafirme.Text;
             string e_mail = txbemailCadastrar.Text;
@@ -103,16 +98,13 @@ namespace SistemaMarques
                 return;
             }
 
-            if (string.IsNullOrWhiteSpace(txbemailCadastrar.Text))
+            if (string.IsNullOrWhiteSpace(txbemailCadastrar.Text) ||
+                string.IsNullOrWhiteSpace(txbsenha.Text) ||
+                string.IsNullOrWhiteSpace(msktxbcpf.Text) ||
+                string.IsNullOrWhiteSpace(msktxbdate.Text) ||
+                string.IsNullOrWhiteSpace(txbfistname.Text))
             {
-
-                lbemailregister.ForeColor = Color.Red;
-                MessageBox.Show(
-                            "Campos Vazios!!",
-                             "",
-                             MessageBoxButtons.OK,
-                             MessageBoxIcon.Error
-                             );
+                MessageBox.Show("Campos Vazios!!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             try
@@ -121,9 +113,22 @@ namespace SistemaMarques
                 string senha = "Ul100traman";
                 string destinatario = e_mail; 
                 string assunto = "Criação de conta:";
-                Html corpo = new Html();
-                string testehtml = corpo.TextoEmail();
-                MessageBox.Show("numero = " + i);
+                i = GerarCodigo();
+                string HTMLEmail =
+                    $@"<!DOCTYPE html>
+                    <html lang = ""pt-br"">
+                    <head>LerMangas</head>
+                    <meta charset=""utf-8"" />
+                    <body>
+                        <h1>Opa ,Tudo Bom?</h1>
+                        <p>Um novo código de validação do email pessoal (PIN de segurança) foi criado.</p>
+                        <br>Esse código de validação é importante para verificar a existência do seu email, dessa forma, por exemplo, ficará
+                            mais fácil redefinir a sua senha de acesso, caso você a perca.
+                        <p>Codigo de Validação:</p>
+                        <h2>" + i + @"</h2>
+                    </body>
+                    </html>";
+                string testehtml = HTMLEmail;
 
                 SmtpClient client = new SmtpClient("smtp.office365.com");
                 client.Port = 587;
@@ -139,34 +144,43 @@ namespace SistemaMarques
             catch (Exception ex)
             {
                 MessageBox.Show("Erro ao enviar o email: " + ex.Message);
+                return;
             }
 
-            Validaremail validaremail = new Validaremail();
+
+            Validaremail validaremail = new Validaremail(i);
             validaremail.ShowDialog();
-        }
+            bool validado = validaremail.Validarcodigo;
+            if (validado)
+            {
+                try
+                {
+                    //Insere o cliente
+                    sqlCommand.ExecuteNonQuery();
+                }
+                catch (Exception err)
+                {
+                    throw new Exception("Erro: Problemas ao inserir colaborador no banco.\n"
+                        + err.Message);
+                }
+                finally
+                {
+                    connection.CloseConnection();
+                }
+                MessageBox.Show(
+                    "Cadastrado com Sucesso",
+                    "CADASTRO",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                    );
+                this.Close();
+            }
+            else
+            {
+                return;
+            }
 
-            /*try
-            {
-                //Insere o cliente
-                sqlCommand.ExecuteNonQuery();
-            }
-            catch (Exception err)
-            {
-                throw new Exception("Erro: Problemas ao inserir colaborador no banco.\n"
-                    + err.Message);
-            }
-            finally
-            {
-                connection.CloseConnection();
-            }
-            MessageBox.Show(
-                "Cadastrado com Sucesso",
-                "CADASTRO",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information
-                );
-            this.Close();
-        }*/
+        }
 
         public void textBox1_TextChanged(object sender, EventArgs e)
         {
@@ -258,14 +272,15 @@ namespace SistemaMarques
         public int GerarCodigo()
         {
             Random random = new Random();
-            int codigo = random.Next(2154,5462);
+            int codigo = random.Next(1024,9568);
             return codigo;
         }
 
-        public void acessar(object sender, EventArgs e)
-        {
-            button1_Click(sender,e);
-        } 
+        /*public int receba() {
+            button1_Click(null, null);
+            return i;
+        }*/
+
     }
 }
 
