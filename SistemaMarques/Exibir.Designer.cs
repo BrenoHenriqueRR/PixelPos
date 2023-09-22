@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Exibir));
             this.pbimagen = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbimagen)).BeginInit();
             this.SuspendLayout();
             // 
             // pbimagen
             // 
+            this.pbimagen.Image = ((System.Drawing.Image)(resources.GetObject("pbimagen.Image")));
             this.pbimagen.Location = new System.Drawing.Point(12, 45);
             this.pbimagen.Name = "pbimagen";
             this.pbimagen.Size = new System.Drawing.Size(776, 393);

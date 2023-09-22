@@ -139,6 +139,7 @@ namespace SistemaMarques
                 message.IsBodyHtml = true;
                 client.Send(message);
 
+
                 MessageBox.Show("E-mail enviado com sucesso para: " + destinatario);
             }
             catch (Exception ex)
