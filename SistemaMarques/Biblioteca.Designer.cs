@@ -30,10 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Biblioteca));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btninserir = new System.Windows.Forms.Button();
-            this.lbHome = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.lbHome = new System.Windows.Forms.Label();
+            this.btninserir = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,19 +49,31 @@
             this.panel1.Size = new System.Drawing.Size(143, 815);
             this.panel1.TabIndex = 0;
             // 
-            // btninserir
+            // button2
             // 
-            this.btninserir.BackColor = System.Drawing.Color.Black;
-            this.btninserir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btninserir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btninserir.ForeColor = System.Drawing.Color.White;
-            this.btninserir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btninserir.Location = new System.Drawing.Point(22, 127);
-            this.btninserir.Name = "btninserir";
-            this.btninserir.Size = new System.Drawing.Size(113, 38);
-            this.btninserir.TabIndex = 1;
-            this.btninserir.Text = "Inserir";
-            this.btninserir.UseVisualStyleBackColor = false;
+            this.button2.BackColor = System.Drawing.Color.Black;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(22, 372);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(113, 38);
+            this.button2.TabIndex = 6;
+            this.button2.Text = "Ajuda";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Black;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(14, 246);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(129, 38);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Biblioteca";
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // lbHome
             // 
@@ -75,31 +87,19 @@
             this.lbHome.Text = "HOME";
             this.lbHome.Click += new System.EventHandler(this.label1_Click);
             // 
-            // button1
+            // btninserir
             // 
-            this.button1.BackColor = System.Drawing.Color.Black;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(22, 246);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(113, 38);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Biblioteca";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Black;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(22, 372);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(113, 38);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Ajuda";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btninserir.BackColor = System.Drawing.Color.Black;
+            this.btninserir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btninserir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btninserir.ForeColor = System.Drawing.Color.White;
+            this.btninserir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btninserir.Location = new System.Drawing.Point(22, 127);
+            this.btninserir.Name = "btninserir";
+            this.btninserir.Size = new System.Drawing.Size(113, 38);
+            this.btninserir.TabIndex = 1;
+            this.btninserir.Text = "Inserir";
+            this.btninserir.UseVisualStyleBackColor = false;
             // 
             // Biblioteca
             // 

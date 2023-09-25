@@ -54,12 +54,6 @@
       <DependentUpon>Biblioteca.cs</DependentUpon>
     </Compile>
     <Compile Include="Connection.cs" />
-    <Compile Include="Exibir.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Exibir.Designer.cs">
-      <DependentUpon>Exibir.cs</DependentUpon>
-    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,9 +76,6 @@
     </Compile>
     <EmbeddedResource Include="Biblioteca.resx">
       <DependentUpon>Biblioteca.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Exibir.resx">
-      <DependentUpon>Exibir.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

@@ -14,6 +14,7 @@ using System.Net;
 using System.Net.Mail;
 using System.Globalization;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Threading;
 
 namespace SistemaMarques
 {
@@ -43,7 +44,7 @@ namespace SistemaMarques
         {
             Connection connection = new Connection();
             SqlCommand sqlCommand = new SqlCommand();
-            
+
 
             string data_nasc = msktxbdate.Text;
             /*msktxbdate.TextChanged += (obj, args) =>
@@ -109,9 +110,9 @@ namespace SistemaMarques
             }
             try
             {
-                string remetente = "SistemaBreno@outlook.com";
-                string senha = "Ul100traman";
-                string destinatario = e_mail; 
+                string remetente = "brenohenrique9@live.com";
+                string senha = "ultraman100";
+                string destinatario = e_mail;
                 string assunto = "Criação de conta:";
                 i = GerarCodigo();
                 string HTMLEmail =
@@ -139,7 +140,6 @@ namespace SistemaMarques
                 message.IsBodyHtml = true;
                 client.Send(message);
 
-
                 MessageBox.Show("E-mail enviado com sucesso para: " + destinatario);
             }
             catch (Exception ex)
@@ -147,7 +147,6 @@ namespace SistemaMarques
                 MessageBox.Show("Erro ao enviar o email: " + ex.Message);
                 return;
             }
-
 
             Validaremail validaremail = new Validaremail(i);
             validaremail.ShowDialog();
@@ -182,7 +181,6 @@ namespace SistemaMarques
             }
 
         }
-
         public void textBox1_TextChanged(object sender, EventArgs e)
         {
             string name = txbfistname.Text;
@@ -276,12 +274,6 @@ namespace SistemaMarques
             int codigo = random.Next(1024,9568);
             return codigo;
         }
-
-        /*public int receba() {
-            button1_Click(null, null);
-            return i;
-        }*/
-
     }
 }
 

@@ -59,7 +59,7 @@
             this.btcadastrar.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.btcadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btcadastrar.ForeColor = System.Drawing.Color.White;
-            this.btcadastrar.Location = new System.Drawing.Point(47, 428);
+            this.btcadastrar.Location = new System.Drawing.Point(47, 444);
             this.btcadastrar.Name = "btcadastrar";
             this.btcadastrar.Size = new System.Drawing.Size(566, 37);
             this.btcadastrar.TabIndex = 0;
@@ -299,7 +299,7 @@
             this.pnCadastro.Controls.Add(this.btcadastrar);
             this.pnCadastro.Location = new System.Drawing.Point(2, -5);
             this.pnCadastro.Name = "pnCadastro";
-            this.pnCadastro.Size = new System.Drawing.Size(652, 499);
+            this.pnCadastro.Size = new System.Drawing.Size(652, 500);
             this.pnCadastro.TabIndex = 28;
             this.pnCadastro.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -308,7 +308,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(645, 485);
+            this.ClientSize = new System.Drawing.Size(645, 491);
             this.Controls.Add(this.pnCadastro);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Cadastro";
