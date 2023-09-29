@@ -16,7 +16,7 @@ namespace SistemaMarques
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Biblioteca());
+            Application.Run(new Login());
         }
     }
 }

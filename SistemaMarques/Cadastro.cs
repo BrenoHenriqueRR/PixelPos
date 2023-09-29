@@ -108,10 +108,15 @@ namespace SistemaMarques
                 MessageBox.Show("Campos Vazios!!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            Thread Mensagem = new Thread(() =>
+            {
+                MessageBox.Show("Enviando Código de validação por Email\nAguarde...");
+            });
+            Mensagem.Start();
             try
             {
-                string remetente = "brenohenrique9@live.com";
-                string senha = "ultraman100";
+                string remetente = "SistemaBreno@outlook.com";
+                string senha = "Ul100traman";
                 string destinatario = e_mail;
                 string assunto = "Criação de conta:";
                 i = GerarCodigo();

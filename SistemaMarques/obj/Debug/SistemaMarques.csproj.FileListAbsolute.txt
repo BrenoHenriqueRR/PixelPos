@@ -39,3 +39,4 @@ C:\Users\breno\source\repos\BrenoKratos\SistemaMarques\BrenoKratos\SistemaMarque
 C:\Users\breno\source\repos\BrenoKratos\SistemaMarques\BrenoKratos\SistemaMarques\SistemaMarques\obj\Debug\SistemaMarques.csproj.CoreCompileInputs.cache
 C:\Users\breno\source\repos\BrenoKratos\SistemaMarques\BrenoKratos\SistemaMarques\SistemaMarques\obj\Debug\SistemaMarques.exe
 C:\Users\breno\source\repos\BrenoKratos\SistemaMarques\BrenoKratos\SistemaMarques\SistemaMarques\obj\Debug\SistemaMarques.pdb
+C:\Users\breno\source\repos\BrenoKratos\SistemaMarques\BrenoKratos\SistemaMarques\SistemaMarques\obj\Debug\SistemaMarques.exibir_inserir.resources

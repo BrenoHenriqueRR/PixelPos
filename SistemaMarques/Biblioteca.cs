@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -16,51 +17,40 @@ namespace SistemaMarques
         public Biblioteca()
         {
             InitializeComponent();
-        }
 
-        private void pnBiblioteca_Paint(object sender, PaintEventArgs e)
-        {
-            
         }
 
         private void Biblioteca_Load(object sender, EventArgs e)
         {
-            if (this.WindowState == FormWindowState.Maximized)
-            {
-               
-            }
-        }
-
-
-        public void chamarComputador(object sender, EventArgs e)
-        {
-            //meuComputadorToolStripMenuItem_Click(sender,e);
-        }
-
-            private void webBrowser1_DocumentCompleted_1(object sender, WebBrowserDocumentCompletedEventArgs e)
-        {
 
         }
 
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
 
-        }
 
         private void Biblioteca_Resize(object sender, EventArgs e)
         {
-           
-        
+
+
         }
 
-        private void pnBiblioteca_Resize(object sender, EventArgs e)
-        {
-            
-        }
 
         private void label1_Click(object sender, EventArgs e)
         {
 
         }
+
+        private void btninserir_Click(object sender, EventArgs e)
+        {
+             this.IsMdiContainer = true;
+             exibir_inserir Exibir = new exibir_inserir();
+             Exibir.MdiParent = this;
+             Exibir.Show();
+        }   
+
+        private void Ibinseririmagem_Paint(object sender, PaintEventArgs e)
+        {
+            this.WindowState = FormWindowState.Normal;
+        }
     }
 }
+ 

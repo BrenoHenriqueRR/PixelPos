@@ -55,7 +55,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(22, 372);
+            this.button2.Location = new System.Drawing.Point(10, 459);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(113, 38);
             this.button2.TabIndex = 6;
@@ -68,7 +68,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(14, 246);
+            this.button1.Location = new System.Drawing.Point(6, 279);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(129, 38);
             this.button1.TabIndex = 5;
@@ -94,23 +94,26 @@
             this.btninserir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btninserir.ForeColor = System.Drawing.Color.White;
             this.btninserir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btninserir.Location = new System.Drawing.Point(22, 127);
+            this.btninserir.Location = new System.Drawing.Point(10, 122);
             this.btninserir.Name = "btninserir";
             this.btninserir.Size = new System.Drawing.Size(113, 38);
             this.btninserir.TabIndex = 1;
             this.btninserir.Text = "Inserir";
             this.btninserir.UseVisualStyleBackColor = false;
+            this.btninserir.Click += new System.EventHandler(this.btninserir_Click);
             // 
             // Biblioteca
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(822, 450);
+            this.ClientSize = new System.Drawing.Size(1176, 591);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Biblioteca";
+            this.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ReadMnga";
+            this.TransparencyKey = System.Drawing.SystemColors.MenuHighlight;
             this.Load += new System.EventHandler(this.Biblioteca_Load);
             this.Resize += new System.EventHandler(this.Biblioteca_Resize);
             this.panel1.ResumeLayout(false);
