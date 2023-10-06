@@ -124,7 +124,7 @@ namespace SistemaMarques
                     $@"<!DOCTYPE html>
                     <html lang = ""pt-br"">
                     <head>LerMangas</head>
-                    <meta charset=""utf-8"" />
+                    <meta charset=""utf-8""/>
                     <body>
                         <h1>Opa ,Tudo Bom?</h1>
                         <p>Um novo código de validação do email pessoal (PIN de segurança) foi criado.</p>

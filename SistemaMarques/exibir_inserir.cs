@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace SistemaMarques
 {
@@ -16,37 +17,33 @@ namespace SistemaMarques
         public exibir_inserir()
         {
             InitializeComponent();
-            pnupload.AllowDrop = true;
-            pnupload.DragEnter += pnupload_Paint;
-            pnupload.DragDrop += pnupload_Paint;
         }
 
         public void exibir_inserir_Load(object sender, EventArgs e)
         {
-            
+            //int larguraDesejada = 1200; // Substitua pelo valor desejado
+            //int alturaDesejada = 800;  // Substitua pelo valor desejado
+
+            // Modifique o tamanho do formulário
+            //this.Size = new System.Drawing.Size(larguraDesejada, alturaDesejada);
         }
 
-        private void pnupload_Paint(object sender, PaintEventArgs e) { 
-        
+        private void pnupload_Paint(object sender, PaintEventArgs e)
+        {
+
         }
 
         private void pnupload_Paint(object sender, DragEventArgs e)
         {
-
-            if (e.Data.GetDataPresent(DataFormats.FileDrop))
-            {
-                // Permite a operação de arrastar
-                e.Effect = DragDropEffects.Copy;
-            }
-            string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
-
-            // Verifica se há pelo menos um arquivo
+          
         }
 
         private void btnvermn_Click(object sender, EventArgs e)
         {
 
         }
+
+
 
         private void btnupload_Click(object sender, EventArgs e)
         {
@@ -60,10 +57,10 @@ namespace SistemaMarques
 
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                string caminhoDaImagem = openFileDialog.FileName;
+                byte[] imagem = File.ReadAllBytes(openFileDialog.FileName);
                 sqlCommand.Connection = connection.ReturnConnection();
-                sqlCommand.CommandText = "INSERT INTO Imagens Values(@CaminhoImagem)";
-                sqlCommand.Parameters.AddWithValue("@CaminhoImagem", caminhoDaImagem);
+                sqlCommand.CommandText = "INSERT INTO Imagens Values(@imagens_binar)";
+                sqlCommand.Parameters.AddWithValue("@imagens_binar", imagem);
                 try
                 {
                     //Insere o cliente
@@ -84,19 +81,7 @@ namespace SistemaMarques
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information
                     );
-                //pictureBox1.Image = new System.Drawing.Bitmap(caminhoDaImagem);
             }
-        }
-
-        private void btnupload_Click(object sender, DragEventArgs e)
-        {
-            if (e.Data.GetDataPresent(DataFormats.FileDrop))
-            {
-                // Permite a operação de arrastar
-                e.Effect = DragDropEffects.Copy;
-            }
-            string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
-
         }
 
         private void label3_Click(object sender, EventArgs e)
