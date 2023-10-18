@@ -42,7 +42,7 @@ namespace SistemaMarques
         private int i;
         private void button1_Click(object sender, EventArgs e)
         {
-            Connection connection = new Connection();
+                Connection connection = new Connection();
             SqlCommand sqlCommand = new SqlCommand();
 
 

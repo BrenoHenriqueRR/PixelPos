@@ -59,7 +59,7 @@
             this.btcadastrar.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.btcadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btcadastrar.ForeColor = System.Drawing.Color.White;
-            this.btcadastrar.Location = new System.Drawing.Point(47, 444);
+            this.btcadastrar.Location = new System.Drawing.Point(47, 447);
             this.btcadastrar.Name = "btcadastrar";
             this.btcadastrar.Size = new System.Drawing.Size(566, 37);
             this.btcadastrar.TabIndex = 0;

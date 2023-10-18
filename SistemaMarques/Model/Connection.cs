@@ -12,7 +12,7 @@ namespace SistemaMarques
     {
         //Propriedades ou atributos
         private readonly SqlConnection con;
-        private readonly string DataBase = "SistemaMarques";
+        private readonly string DataBase = "PixelPOS";
 
         //Construtor
         public Connection()                            //LAPTOP-9TN8R1CF\SQLEXPRESS

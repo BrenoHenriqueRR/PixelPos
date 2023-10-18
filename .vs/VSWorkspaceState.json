@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\SistemaMarques"
+    "\\SistemaMarques",
+    "\\SistemaMarques\\View"
   ],
-  "SelectedNode": "\\SistemaMarques\\exibir_inserir.cs",
+  "SelectedNode": "\\SistemaMarques\\App.config",
   "PreviewInSolutionExplorer": false
 }

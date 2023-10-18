@@ -17,7 +17,7 @@ namespace SistemaMarques
             InitializeComponent();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void Galeria_Load(object sender, EventArgs e)
         {
 
         }

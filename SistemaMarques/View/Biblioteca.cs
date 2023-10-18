@@ -18,7 +18,7 @@ namespace SistemaMarques
         public Biblioteca()
         {
             InitializeComponent();
-
+            this.MaximizeBox = false;
         }
 
         private void Biblioteca_Load(Form frm)
@@ -26,7 +26,7 @@ namespace SistemaMarques
             bibliotecaClose();
             frmAtivo = frm;
             frm.TopLevel = false;
-            pnhomee.Controls.Add(frm);
+            pnhome.Controls.Add(frm);
             frm.BringToFront();
             frm.Show();
         }
@@ -63,26 +63,32 @@ namespace SistemaMarques
 
         private void label1_Click(object sender, EventArgs e)
         {
-
         }
 
         private void btninserir_Click(object sender, EventArgs e)
         {
             AtivarBotao(btninserir);
             exibir_inserir exibirin = new exibir_inserir();
-            exibirin.Show();
+            Biblioteca_Load(exibirin);
 
-             //this.ismdicontainer = true;
-             //exibir_inserir exibir = new exibir_inserir();
-             //exibir.mdiparent = this;
-             //exibir.show();
+            //this.IsMdiContainer = true;
+            //exibir_inserir exibir = new exibir_inserir();
+            //exibir.MdiParent = this;
+            //exibir.Dock = DockStyle.Fill;
+            //exibir.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             AtivarBotao(button1);
+            bibliotecaClose();
             Galeria Blibioteca = new Galeria();
-            Blibioteca.Show();
+            Biblioteca_Load(Blibioteca);
+        }
+
+        private void pnhomee_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
