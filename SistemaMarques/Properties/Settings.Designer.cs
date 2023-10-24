@@ -33,5 +33,15 @@ namespace SistemaMarques.Properties {
                 return ((string)(this["SistemaMarquesConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=BRENIN\\SQLEXPRESS;Initial Catalog=PixelPOS;Integrated Security=True")]
+        public string PixelPOSConnectionString {
+            get {
+                return ((string)(this["PixelPOSConnectionString"]));
+            }
+        }
     }
 }

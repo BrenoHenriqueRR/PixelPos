@@ -28,66 +28,63 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("");
+            this.pixelPOSDataSet = new SistemaMarques.PixelPOSDataSet();
+            this.pixelPOSDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lvtabela = new System.Windows.Forms.ListView();
+            ((System.ComponentModel.ISupportInitialize)(this.pixelPOSDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pixelPOSDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // id
+            // pixelPOSDataSet
             // 
-            this.id.HeaderText = "id";
-            this.id.MinimumWidth = 6;
-            this.id.Name = "id";
-            this.id.Width = 125;
+            this.pixelPOSDataSet.DataSetName = "PixelPOSDataSet";
+            this.pixelPOSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // nome
+            // pixelPOSDataSetBindingSource
             // 
-            this.nome.HeaderText = "Nome";
-            this.nome.MinimumWidth = 6;
-            this.nome.Name = "nome";
-            this.nome.Width = 125;
+            this.pixelPOSDataSetBindingSource.DataSource = this.pixelPOSDataSet;
+            this.pixelPOSDataSetBindingSource.Position = 0;
+            this.pixelPOSDataSetBindingSource.CurrentChanged += new System.EventHandler(this.pixelPOSDataSetBindingSource_CurrentChanged);
             // 
-            // button1
+            // lvtabela
             // 
-            this.button1.Location = new System.Drawing.Point(213, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(168, 38);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(553, 250);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(168, 38);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.lvtabela.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lvtabela.GridLines = true;
+            this.lvtabela.HideSelection = false;
+            this.lvtabela.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem1});
+            this.lvtabela.Location = new System.Drawing.Point(49, 93);
+            this.lvtabela.Name = "lvtabela";
+            this.lvtabela.Size = new System.Drawing.Size(1049, 450);
+            this.lvtabela.TabIndex = 1;
+            this.lvtabela.UseCompatibleStateImageBehavior = false;
+            this.lvtabela.View = System.Windows.Forms.View.Details;
+            this.lvtabela.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // Galeria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(733, 540);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(1169, 642);
+            this.Controls.Add(this.lvtabela);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Location = new System.Drawing.Point(205, 0);
             this.Name = "Galeria";
-            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Galeria";
+            this.Text = "ldgaleria";
             this.Load += new System.EventHandler(this.Galeria_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pixelPOSDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pixelPOSDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nome;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.BindingSource pixelPOSDataSetBindingSource;
+        private PixelPOSDataSet pixelPOSDataSet;
+        private System.Windows.Forms.ListView lvtabela;
     }
 }
