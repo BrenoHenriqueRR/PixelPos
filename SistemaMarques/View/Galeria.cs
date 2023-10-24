@@ -25,14 +25,10 @@ namespace SistemaMarques
             lvtabela.Columns.Add("email_cli", 200);
             StartPosition = FormStartPosition.Manual;
             this.Left = 0;
+
         }
 
         private void Galeria_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
             lvtabela.Items.Clear();
 
@@ -61,9 +57,15 @@ namespace SistemaMarques
                 dr.Close();
 
             }
-            catch(Exception ex){
+            catch (Exception ex)
+            {
                 MessageBox.Show("Erro: " + ex.Message);
             }
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
         }
 
         private void pixelPOSDataSetBindingSource_CurrentChanged(object sender, EventArgs e)

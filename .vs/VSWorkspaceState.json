@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\SistemaMarques",
+    "\\SistemaMarques\\View"
   ],
-  "SelectedNode": "\\SistemaMarques.sln",
+  "SelectedNode": "\\SistemaMarques\\View\\Galeria.cs",
   "PreviewInSolutionExplorer": false
 }

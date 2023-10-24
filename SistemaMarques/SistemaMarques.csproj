@@ -52,11 +52,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PixelPOSDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="View\Biblioteca.cs">
+    <Compile Include="View\Admin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Biblioteca.Designer.cs">
-      <DependentUpon>Biblioteca.cs</DependentUpon>
+    <Compile Include="View\Admin.Designer.cs">
+      <DependentUpon>Admin.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Connection.cs" />
     <Compile Include="View\exibir_inserir.cs">
@@ -91,8 +91,8 @@
     <Compile Include="View\Validaremail.Designer.cs">
       <DependentUpon>Validaremail.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="View\Biblioteca.resx">
-      <DependentUpon>Biblioteca.cs</DependentUpon>
+    <EmbeddedResource Include="View\Admin.resx">
+      <DependentUpon>Admin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\exibir_inserir.resx">
       <DependentUpon>exibir_inserir.cs</DependentUpon>

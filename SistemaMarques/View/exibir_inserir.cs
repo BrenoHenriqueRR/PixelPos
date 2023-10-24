@@ -18,6 +18,7 @@ namespace SistemaMarques
         public exibir_inserir()
         {
             InitializeComponent();
+            this.Left = 0;
         }
 
         public void exibir_inserir_Load(object sender, EventArgs e)
@@ -74,15 +75,15 @@ namespace SistemaMarques
         { 
             Connection connection = new Connection();
             SqlCommand sqlCommand = new SqlCommand();
-
-
-                
+      
             sqlCommand.Connection = connection.ReturnConnection();
             sqlCommand.CommandText = "INSERT INTO Imagens Values(@imagens_binar,@nome_album,@nome_cli,@email_cli)";
             sqlCommand.Parameters.AddWithValue("@nome_album", txbnomealbum.Text);
             sqlCommand.Parameters.AddWithValue("@nome_cli", txbnomecli.Text);
             sqlCommand.Parameters.AddWithValue("@email_cli", txbemailcli.Text);
             sqlCommand.Parameters.AddWithValue("@imagens_binar", armazenarimg);
+
+            //if()
             try
             {
                 //Insere o cliente
@@ -103,6 +104,16 @@ namespace SistemaMarques
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Information
                 );
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

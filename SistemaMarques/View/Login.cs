@@ -66,7 +66,7 @@ namespace SistemaMarques
                   if (reader.HasRows)
                   {
                      MessageBox.Show("Login bem-sucedido!");
-                     Biblioteca biblioteca = new Biblioteca();
+                     Admin biblioteca = new Admin();
                      this.Visible = false;
                      biblioteca.Show();
                   }

@@ -30,7 +30,6 @@ C:\Users\breno\source\repos\BrenoKratos\SistemaMarques\BrenoKratos\SistemaMarque
 C:\Users\breno\source\repos\BrenoKratos\SistemaMarques\BrenoKratos\SistemaMarques\SistemaMarques\bin\Debug\SistemaMarques.pdb
 C:\Users\breno\source\repos\BrenoKratos\SistemaMarques\BrenoKratos\SistemaMarques\SistemaMarques\obj\Debug\SistemaMarques.csproj.AssemblyReference.cache
 C:\Users\breno\source\repos\BrenoKratos\SistemaMarques\BrenoKratos\SistemaMarques\SistemaMarques\obj\Debug\SistemaMarques.csproj.SuggestedBindingRedirects.cache
-C:\Users\breno\source\repos\BrenoKratos\SistemaMarques\BrenoKratos\SistemaMarques\SistemaMarques\obj\Debug\SistemaMarques.Biblioteca.resources
 C:\Users\breno\source\repos\BrenoKratos\SistemaMarques\BrenoKratos\SistemaMarques\SistemaMarques\obj\Debug\SistemaMarques.Login.resources
 C:\Users\breno\source\repos\BrenoKratos\SistemaMarques\BrenoKratos\SistemaMarques\SistemaMarques\obj\Debug\SistemaMarques.Cadastro.resources
 C:\Users\breno\source\repos\BrenoKratos\SistemaMarques\BrenoKratos\SistemaMarques\SistemaMarques\obj\Debug\SistemaMarques.Properties.Resources.resources
@@ -41,3 +40,4 @@ C:\Users\breno\source\repos\BrenoKratos\SistemaMarques\BrenoKratos\SistemaMarque
 C:\Users\breno\source\repos\BrenoKratos\SistemaMarques\BrenoKratos\SistemaMarques\SistemaMarques\obj\Debug\SistemaMarques.pdb
 C:\Users\breno\source\repos\BrenoKratos\SistemaMarques\BrenoKratos\SistemaMarques\SistemaMarques\obj\Debug\SistemaMarques.exibir_inserir.resources
 C:\Users\breno\source\repos\BrenoKratos\SistemaMarques\BrenoKratos\SistemaMarques\SistemaMarques\obj\Debug\SistemaMarques.Galeria.resources
+C:\Users\breno\source\repos\BrenoKratos\SistemaMarques\BrenoKratos\SistemaMarques\SistemaMarques\obj\Debug\SistemaMarques.Admin.resources

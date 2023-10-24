@@ -12,10 +12,10 @@ using System.Windows.Forms;
 
 namespace SistemaMarques
 {
-    public partial class Biblioteca : Form
+    public partial class Admin : Form
     {
         private Form frmAtivo;
-        public Biblioteca()
+        public Admin()
         {
             InitializeComponent();
             this.MaximizeBox = false;
