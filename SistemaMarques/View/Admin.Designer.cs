@@ -86,6 +86,7 @@
             this.btnExcluir.TabIndex = 6;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = false;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // button1
             // 
@@ -141,6 +142,7 @@
             // 
             // pnhome
             // 
+            this.pnhome.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnhome.Location = new System.Drawing.Point(205, 0);
             this.pnhome.Name = "pnhome";
             this.pnhome.Size = new System.Drawing.Size(1169, 642);
@@ -157,7 +159,7 @@
             this.ClientSize = new System.Drawing.Size(1373, 642);
             this.Controls.Add(this.pnopcoes);
             this.Controls.Add(this.pnhome);
-            this.Font = new System.Drawing.Font("Perpetua Titling MT", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft New Tai Lue", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.Name = "Admin";

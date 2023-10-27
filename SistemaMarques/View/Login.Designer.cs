@@ -177,7 +177,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "LERMNGAS";
+            this.Text = "PixelPOS";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Pncadastro.ResumeLayout(false);
             this.Pncadastro.PerformLayout();

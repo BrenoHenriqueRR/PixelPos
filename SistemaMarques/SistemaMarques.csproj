@@ -59,17 +59,29 @@
       <DependentUpon>Admin.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Connection.cs" />
+    <Compile Include="View\Editar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Editar.Designer.cs">
+      <DependentUpon>Editar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Excluir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Excluir.Designer.cs">
+      <DependentUpon>Excluir.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\exibir_inserir.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\exibir_inserir.Designer.cs">
       <DependentUpon>exibir_inserir.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Galeria.cs">
+    <Compile Include="View\Tabela.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Galeria.Designer.cs">
-      <DependentUpon>Galeria.cs</DependentUpon>
+    <Compile Include="View\Tabela.Designer.cs">
+      <DependentUpon>Tabela.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Login.cs">
       <SubType>Form</SubType>
@@ -94,11 +106,17 @@
     <EmbeddedResource Include="View\Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Editar.resx">
+      <DependentUpon>Editar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Excluir.resx">
+      <DependentUpon>Excluir.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\exibir_inserir.resx">
       <DependentUpon>exibir_inserir.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Galeria.resx">
-      <DependentUpon>Galeria.cs</DependentUpon>
+    <EmbeddedResource Include="View\Tabela.resx">
+      <DependentUpon>Tabela.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

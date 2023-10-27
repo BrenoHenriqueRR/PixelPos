@@ -141,6 +141,7 @@
             this.pninserir.Name = "pninserir";
             this.pninserir.Size = new System.Drawing.Size(458, 299);
             this.pninserir.TabIndex = 16;
+            this.pninserir.Paint += new System.Windows.Forms.PaintEventHandler(this.pninserir_Paint);
             // 
             // label4
             // 

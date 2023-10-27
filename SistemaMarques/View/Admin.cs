@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemaMarques.View;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -82,13 +83,21 @@ namespace SistemaMarques
         {
             AtivarBotao(button1);
             bibliotecaClose();
-            Galeria Blibioteca = new Galeria();
+            Tabela Blibioteca = new Tabela();
             Biblioteca_Load(Blibioteca);
         }
 
         private void pnhomee_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            AtivarBotao(btnExcluir);
+            bibliotecaClose();
+            Excluir apagar = new Excluir();
+            Biblioteca_Load(apagar);
         }
     }
 }

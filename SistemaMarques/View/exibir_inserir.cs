@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using static System.Net.Mime.MediaTypeNames;
+using System.Runtime.CompilerServices;
 
 namespace SistemaMarques
 {
@@ -46,26 +47,27 @@ namespace SistemaMarques
         }
 
 
-        private byte[] armazenarimg;
+        private string caminhoimagem;
 
         private void btnupload_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
 
-            openFileDialog.Filter = "Arquivos de imagem|*.jpg;*.jpeg;*.png;*.gif;*.bmp|Todos os arquivos|*.*";
-            openFileDialog.Multiselect = true;
-            openFileDialog.Title = "Selecione uma imagem";
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+                openFileDialog.Filter = "Arquivos de imagem|*.jpg;*.jpeg;*.png;*.gif;*.bmp|Todos os arquivos|*.*";
+                openFileDialog.Multiselect = true;
+                openFileDialog.Title = "Selecione uma imagem";
 
             if (openFileDialog.ShowDialog() == DialogResult.OK && openFileDialog.FileNames.Length > 0)
             {
-                byte[] imagemfile = File.ReadAllBytes(openFileDialog.FileName);
-                armazenarimg = imagemfile;
+                //label1.Text = "Quantidade de fotos selecionadas: " + openFileDialog.FileNames.Length;
+              
+                  this.caminhoimagem = openFileDialog.FileName;
             }
             else
             {
                 return;
             }
-        }
+         }
         private void label3_Click(object sender, EventArgs e)
         {
 
@@ -81,9 +83,8 @@ namespace SistemaMarques
             sqlCommand.Parameters.AddWithValue("@nome_album", txbnomealbum.Text);
             sqlCommand.Parameters.AddWithValue("@nome_cli", txbnomecli.Text);
             sqlCommand.Parameters.AddWithValue("@email_cli", txbemailcli.Text);
-            sqlCommand.Parameters.AddWithValue("@imagens_binar", armazenarimg);
 
-            //if()
+
             try
             {
                 //Insere o cliente
@@ -112,6 +113,11 @@ namespace SistemaMarques
         }
 
         private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pninserir_Paint(object sender, PaintEventArgs e)
         {
 
         }
