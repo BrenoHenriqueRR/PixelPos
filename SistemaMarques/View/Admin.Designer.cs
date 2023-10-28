@@ -32,7 +32,7 @@
             this.pnopcoes = new System.Windows.Forms.Panel();
             this.btnrelatorio = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Btnbiblioteca = new System.Windows.Forms.Button();
             this.btninserir = new System.Windows.Forms.Button();
             this.lbHome = new System.Windows.Forms.Label();
             this.pnhome = new System.Windows.Forms.Panel();
@@ -46,7 +46,7 @@
             this.pnopcoes.BackColor = System.Drawing.Color.Black;
             this.pnopcoes.Controls.Add(this.btnrelatorio);
             this.pnopcoes.Controls.Add(this.btnExcluir);
-            this.pnopcoes.Controls.Add(this.button1);
+            this.pnopcoes.Controls.Add(this.Btnbiblioteca);
             this.pnopcoes.Controls.Add(this.btninserir);
             this.pnopcoes.Controls.Add(this.lbHome);
             this.pnopcoes.Cursor = System.Windows.Forms.Cursors.Default;
@@ -88,24 +88,24 @@
             this.btnExcluir.UseVisualStyleBackColor = false;
             this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
-            // button1
+            // Btnbiblioteca
             // 
-            this.button1.AutoSize = true;
-            this.button1.BackColor = System.Drawing.Color.Black;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Perpetua Titling MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(2, 220);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(199, 77);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Biblioteca";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.Btnbiblioteca.AutoSize = true;
+            this.Btnbiblioteca.BackColor = System.Drawing.Color.Black;
+            this.Btnbiblioteca.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
+            this.Btnbiblioteca.FlatAppearance.BorderSize = 0;
+            this.Btnbiblioteca.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
+            this.Btnbiblioteca.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.Btnbiblioteca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btnbiblioteca.Font = new System.Drawing.Font("Perpetua Titling MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btnbiblioteca.ForeColor = System.Drawing.Color.White;
+            this.Btnbiblioteca.Location = new System.Drawing.Point(2, 220);
+            this.Btnbiblioteca.Name = "Btnbiblioteca";
+            this.Btnbiblioteca.Size = new System.Drawing.Size(199, 77);
+            this.Btnbiblioteca.TabIndex = 5;
+            this.Btnbiblioteca.Text = "Biblioteca";
+            this.Btnbiblioteca.UseVisualStyleBackColor = false;
+            this.Btnbiblioteca.Click += new System.EventHandler(this.button1_Click);
             // 
             // btninserir
             // 
@@ -178,7 +178,7 @@
 
         private System.Windows.Forms.Panel pnopcoes;
         private System.Windows.Forms.Label lbHome;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Btnbiblioteca;
         private System.Windows.Forms.Button btninserir;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Panel pnhome;

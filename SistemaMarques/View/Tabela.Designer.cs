@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("");
             this.pixelPOSDataSet = new SistemaMarques.PixelPOSDataSet();
             this.pixelPOSDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lvtabela = new System.Windows.Forms.ListView();
@@ -58,7 +58,7 @@
             this.lvtabela.GridLines = true;
             this.lvtabela.HideSelection = false;
             this.lvtabela.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem2});
+            listViewItem1});
             this.lvtabela.Location = new System.Drawing.Point(49, 93);
             this.lvtabela.MultiSelect = false;
             this.lvtabela.Name = "lvtabela";

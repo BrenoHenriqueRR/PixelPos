@@ -6,6 +6,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Remoting.Channels;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -71,17 +72,11 @@ namespace SistemaMarques
             AtivarBotao(btninserir);
             exibir_inserir exibirin = new exibir_inserir();
             Biblioteca_Load(exibirin);
-
-            //this.IsMdiContainer = true;
-            //exibir_inserir exibir = new exibir_inserir();
-            //exibir.MdiParent = this;
-            //exibir.Dock = DockStyle.Fill;
-            //exibir.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            AtivarBotao(button1);
+            AtivarBotao(Btnbiblioteca);
             bibliotecaClose();
             Tabela Blibioteca = new Tabela();
             Biblioteca_Load(Blibioteca);

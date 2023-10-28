@@ -76,23 +76,52 @@ namespace SistemaMarques
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Connection conn = new Connection();
+            SqlCommand sqlCom = new SqlCommand();
 
+            int indiceLinhaSelecionada;
+            if (lvtabela.SelectedItems.Count > 0)
+            {
+                indiceLinhaSelecionada = lvtabela.SelectedIndices[0];
+                int id = Convert.ToInt32(lvtabela.Items[indiceLinhaSelecionada].SubItems[0].Text);
+                sqlCom.Connection = conn.ReturnConnection();
+                sqlCom.CommandText = "DELETE FROM Imagens WHERE id = @id";
+                sqlCom.Parameters.AddWithValue("@id", id);
+
+                try
+                {
+                    //deleta por id
+                   sqlCom.ExecuteNonQuery();
+                    MessageBox.Show(
+                    "Album deletado com Sucesso",
+                    "",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                   );
+                    lvtabela.Items.RemoveAt(indiceLinhaSelecionada);
+                }
+                catch (Exception err)
+                {
+                    throw new Exception("Erro: Problemas ao inserir colaborador no banco.\n"
+                        + err.Message);
+                }
+                finally
+                {
+                    conn.CloseConnection();
+                }
+            }
+            
         }
 
         private void btneditar_Click(object sender, EventArgs e)
-        {
-            Editar editar = new Editar();
-            editar.ShowDialog();
-            int itemnome_album = 1;
-            int itemnome_cli = 2;
-            int itememail_cli = 3;
-
-
+        { 
             if (lvtabela.SelectedItems.Count > 0)
             {
-                int indiceLinhaSelecionada = lvtabela.SelectedIndices[0];
+                int editarid = lvtabela.SelectedIndices[0];
+                Editar editar = new Editar(editarid);
+                editar.ShowDialog();
                 //MessageBox.Show("Linha selecionada: " + indiceLinhaSelecionada);
-                lvtabela.Items[indiceLinhaSelecionada].SubItems[1].Text = "testeando" ;
+                //lvtabela.Items[indiceLinhaSelecionada].SubItems[1].Text = "testeando" ;
             }
         }
     }

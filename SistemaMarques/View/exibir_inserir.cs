@@ -79,7 +79,7 @@ namespace SistemaMarques
             SqlCommand sqlCommand = new SqlCommand();
       
             sqlCommand.Connection = connection.ReturnConnection();
-            sqlCommand.CommandText = "INSERT INTO Imagens Values(@imagens_binar,@nome_album,@nome_cli,@email_cli)";
+            sqlCommand.CommandText = "INSERT INTO Imagens Values(@nome_album,@nome_cli,@email_cli)";
             sqlCommand.Parameters.AddWithValue("@nome_album", txbnomealbum.Text);
             sqlCommand.Parameters.AddWithValue("@nome_cli", txbnomecli.Text);
             sqlCommand.Parameters.AddWithValue("@email_cli", txbemailcli.Text);
