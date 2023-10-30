@@ -117,7 +117,12 @@ namespace SistemaMarques
         { 
             if (lvtabela.SelectedItems.Count > 0)
             {
-                int editarid = lvtabela.SelectedIndices[0];
+                // int editarid = lvtabela.SelectedIndices[0];
+                ListViewItem lvid = lvtabela.SelectedItems[0];
+                string sid = lvid.SubItems[0].Text;
+                int editarid = Convert.ToInt32(sid);
+
+
                 Editar editar = new Editar(editarid);
                 editar.ShowDialog();
                 //MessageBox.Show("Linha selecionada: " + indiceLinhaSelecionada);

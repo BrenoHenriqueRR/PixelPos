@@ -17,7 +17,7 @@ namespace SistemaMarques.View
         public Editar(int editarid)
         {
             InitializeComponent();
-            int id = editarid;
+            this.id = editarid;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -43,15 +43,41 @@ namespace SistemaMarques.View
 
         private void button1_Click(object sender, EventArgs e)
         {
+
             Connection conn = new Connection();
             SqlCommand sqlCom = new SqlCommand();
             sqlCom.Connection = conn.ReturnConnection();
-            sqlCom.CommandText = "UPDATE Imagens SET nome_album,nome_cli,nome_email WHERE id = @id";
-            sqlCom.Parameters.AddWithValue("@id", this.id);
-            sqlCom.Parameters.AddWithValue("@nome_album", this.id);
-            sqlCom.Parameters.AddWithValue("@nome_cli", this.id);
-            sqlCom.Parameters.AddWithValue("@nome_email", this.id)
+            sqlCom.CommandText = @"UPDATE Imagens SET  
+                nome_album = @nome_album,
+                nome_cli = @nome_cli ,
+                email_cli = @email_cli
+                WHERE id = @id ";
+            sqlCom.Parameters.AddWithValue("@nome_album", txbnome_album.Text);
+            sqlCom.Parameters.AddWithValue("@nome_cli", txbnome_cli.Text);
+            sqlCom.Parameters.AddWithValue("@email_cli", txbemail_cli.Text);
+            sqlCom.Parameters.AddWithValue("@id", id);
 
+            try
+            {
+                sqlCom.ExecuteNonQuery();
+                MessageBox.Show(
+                    "Album editado com Sucesso",
+                    "",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                   );
+
+            }
+            catch (Exception err)
+            {
+                throw new Exception("Erro: Problemas ao inserir colaborador no banco.\n"
+                    + err.Message);
+            }
+            finally
+            {
+                conn.CloseConnection();
+            }
+            this.Close();
         }
     }
 }
