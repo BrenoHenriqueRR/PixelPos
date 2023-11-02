@@ -59,10 +59,10 @@
             this.lvtabela.HideSelection = false;
             this.lvtabela.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
             listViewItem1});
-            this.lvtabela.Location = new System.Drawing.Point(49, 93);
+            this.lvtabela.Location = new System.Drawing.Point(12, 93);
             this.lvtabela.MultiSelect = false;
             this.lvtabela.Name = "lvtabela";
-            this.lvtabela.Size = new System.Drawing.Size(974, 450);
+            this.lvtabela.Size = new System.Drawing.Size(1045, 450);
             this.lvtabela.TabIndex = 1;
             this.lvtabela.UseCompatibleStateImageBehavior = false;
             this.lvtabela.View = System.Windows.Forms.View.Details;
@@ -72,9 +72,9 @@
             // 
             this.btnexcluir.BackColor = System.Drawing.Color.Brown;
             this.btnexcluir.ForeColor = System.Drawing.Color.White;
-            this.btnexcluir.Location = new System.Drawing.Point(1039, 502);
+            this.btnexcluir.Location = new System.Drawing.Point(1063, 502);
             this.btnexcluir.Name = "btnexcluir";
-            this.btnexcluir.Size = new System.Drawing.Size(118, 41);
+            this.btnexcluir.Size = new System.Drawing.Size(94, 41);
             this.btnexcluir.TabIndex = 2;
             this.btnexcluir.Text = "Excluir";
             this.btnexcluir.UseVisualStyleBackColor = false;
@@ -84,9 +84,9 @@
             // 
             this.btneditar.BackColor = System.Drawing.Color.DarkOliveGreen;
             this.btneditar.ForeColor = System.Drawing.Color.White;
-            this.btneditar.Location = new System.Drawing.Point(1039, 298);
+            this.btneditar.Location = new System.Drawing.Point(1063, 298);
             this.btneditar.Name = "btneditar";
-            this.btneditar.Size = new System.Drawing.Size(118, 41);
+            this.btneditar.Size = new System.Drawing.Size(94, 41);
             this.btneditar.TabIndex = 3;
             this.btneditar.Text = "Editar";
             this.btneditar.UseVisualStyleBackColor = false;
@@ -96,12 +96,13 @@
             // 
             this.btnimagens.BackColor = System.Drawing.Color.SteelBlue;
             this.btnimagens.ForeColor = System.Drawing.Color.White;
-            this.btnimagens.Location = new System.Drawing.Point(1039, 93);
+            this.btnimagens.Location = new System.Drawing.Point(1063, 93);
             this.btnimagens.Name = "btnimagens";
-            this.btnimagens.Size = new System.Drawing.Size(118, 41);
+            this.btnimagens.Size = new System.Drawing.Size(94, 41);
             this.btnimagens.TabIndex = 4;
             this.btnimagens.Text = "Imagens";
             this.btnimagens.UseVisualStyleBackColor = false;
+            this.btnimagens.Click += new System.EventHandler(this.btnimagens_Click);
             // 
             // Tabela
             // 

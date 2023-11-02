@@ -1,4 +1,5 @@
-﻿using SistemaMarques.View;
+﻿using SistemaMarques.Controller;
+using SistemaMarques.View;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -93,6 +94,14 @@ namespace SistemaMarques
             bibliotecaClose();
             Excluir apagar = new Excluir();
             Biblioteca_Load(apagar);
+        }
+
+        private void btnrelatorio_Click(object sender, EventArgs e)
+        {
+            AtivarBotao(btnrelatorio);
+            bibliotecaClose();
+            Relatorio relatorio = new Relatorio();  
+            Biblioteca_Load(relatorio);
         }
     }
 }

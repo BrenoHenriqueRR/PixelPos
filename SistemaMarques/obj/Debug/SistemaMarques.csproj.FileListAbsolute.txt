@@ -29,7 +29,6 @@ C:\Users\breno\source\repos\BrenoKratos\SistemaMarques\BrenoKratos\SistemaMarque
 C:\Users\breno\source\repos\BrenoKratos\SistemaMarques\BrenoKratos\SistemaMarques\SistemaMarques\bin\Debug\SistemaMarques.exe
 C:\Users\breno\source\repos\BrenoKratos\SistemaMarques\BrenoKratos\SistemaMarques\SistemaMarques\bin\Debug\SistemaMarques.pdb
 C:\Users\breno\source\repos\BrenoKratos\SistemaMarques\BrenoKratos\SistemaMarques\SistemaMarques\obj\Debug\SistemaMarques.csproj.AssemblyReference.cache
-C:\Users\breno\source\repos\BrenoKratos\SistemaMarques\BrenoKratos\SistemaMarques\SistemaMarques\obj\Debug\SistemaMarques.csproj.SuggestedBindingRedirects.cache
 C:\Users\breno\source\repos\BrenoKratos\SistemaMarques\BrenoKratos\SistemaMarques\SistemaMarques\obj\Debug\SistemaMarques.Login.resources
 C:\Users\breno\source\repos\BrenoKratos\SistemaMarques\BrenoKratos\SistemaMarques\SistemaMarques\obj\Debug\SistemaMarques.Cadastro.resources
 C:\Users\breno\source\repos\BrenoKratos\SistemaMarques\BrenoKratos\SistemaMarques\SistemaMarques\obj\Debug\SistemaMarques.Properties.Resources.resources
@@ -45,3 +44,12 @@ C:\Users\breno\source\repos\BrenoKratos\SistemaMarques\BrenoKratos\SistemaMarque
 C:\Users\breno\source\repos\BrenoKratos\SistemaMarques\BrenoKratos\SistemaMarques\SistemaMarques\obj\Debug\SistemaMarques.View.Editar.resources
 C:\Users\breno\source\repos\BrenoKratos\SistemaMarques\BrenoKratos\SistemaMarques\SistemaMarques\bin\Debug\QRCoder.dll
 C:\Users\breno\source\repos\BrenoKratos\SistemaMarques\BrenoKratos\SistemaMarques\SistemaMarques\obj\Debug\SistemaMarques.csproj.CopyComplete
+C:\Users\breno\source\repos\BrenoKratos\SistemaMarques\BrenoKratos\SistemaMarques\SistemaMarques\bin\Debug\EPPlus.dll
+C:\Users\breno\source\repos\BrenoKratos\SistemaMarques\BrenoKratos\SistemaMarques\SistemaMarques\bin\Debug\EPPlus.Interfaces.dll
+C:\Users\breno\source\repos\BrenoKratos\SistemaMarques\BrenoKratos\SistemaMarques\SistemaMarques\bin\Debug\EPPlus.System.Drawing.dll
+C:\Users\breno\source\repos\BrenoKratos\SistemaMarques\BrenoKratos\SistemaMarques\SistemaMarques\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Users\breno\source\repos\BrenoKratos\SistemaMarques\BrenoKratos\SistemaMarques\SistemaMarques\bin\Debug\System.ComponentModel.Annotations.dll
+C:\Users\breno\source\repos\BrenoKratos\SistemaMarques\BrenoKratos\SistemaMarques\SistemaMarques\bin\Debug\EPPlus.xml
+C:\Users\breno\source\repos\BrenoKratos\SistemaMarques\BrenoKratos\SistemaMarques\SistemaMarques\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
+C:\Users\breno\source\repos\BrenoKratos\SistemaMarques\BrenoKratos\SistemaMarques\SistemaMarques\obj\Debug\SistemaMarques.View.Exibir_imagens.resources
+C:\Users\breno\source\repos\BrenoKratos\SistemaMarques\BrenoKratos\SistemaMarques\SistemaMarques\obj\Debug\SistemaMarques.View.Relatorio.resources

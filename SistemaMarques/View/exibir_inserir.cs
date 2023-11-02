@@ -51,6 +51,23 @@ namespace SistemaMarques
 
         private void btnupload_Click(object sender, EventArgs e)
         {
+            string LocalPasta = @"C:\Users\breno\OneDrive\Imagens\";
+
+            try
+            {
+                if (Directory.Exists(LocalPasta))
+                {
+                    return;
+                }
+                DirectoryInfo pasta =   new DirectoryInfo(LocalPasta); 
+
+            }
+            catch(Exception err)
+            {
+                throw new Exception("Erro: Problemas ao criar a pasta.\n"
+                    + err.Message);
+            }
+
 
             OpenFileDialog openFileDialog = new OpenFileDialog();
                 openFileDialog.Filter = "Arquivos de imagem|*.jpg;*.jpeg;*.png;*.gif;*.bmp|Todos os arquivos|*.*";
@@ -62,6 +79,7 @@ namespace SistemaMarques
                 //label1.Text = "Quantidade de fotos selecionadas: " + openFileDialog.FileNames.Length;
               
                   this.caminhoimagem = openFileDialog.FileName;
+
             }
             else
             {
@@ -77,12 +95,16 @@ namespace SistemaMarques
         { 
             Connection connection = new Connection();
             SqlCommand sqlCommand = new SqlCommand();
-      
+
+            DateTime dataHoraAtual = DateTime.Now;
+
+
             sqlCommand.Connection = connection.ReturnConnection();
-            sqlCommand.CommandText = "INSERT INTO Imagens Values(@nome_album,@nome_cli,@email_cli)";
+            sqlCommand.CommandText = "INSERT INTO Imagens Values(@nome_album,@nome_cli,@email_cli,@album_criacao)";
             sqlCommand.Parameters.AddWithValue("@nome_album", txbnomealbum.Text);
             sqlCommand.Parameters.AddWithValue("@nome_cli", txbnomecli.Text);
             sqlCommand.Parameters.AddWithValue("@email_cli", txbemailcli.Text);
+            sqlCommand.Parameters.AddWithValue("@album_criacao", dataHoraAtual);
 
 
             try
@@ -105,6 +127,7 @@ namespace SistemaMarques
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Information
                 );
+
         }
 
         private void label2_Click(object sender, EventArgs e)

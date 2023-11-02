@@ -20,10 +20,11 @@ namespace SistemaMarques
         {
             InitializeComponent();
            // lvtabela.View = View.Details;
-            lvtabela.Columns.Add("id", 50);
-            lvtabela.Columns.Add("nome_album", 100);
-            lvtabela.Columns.Add("nome_cli", 300);
-            lvtabela.Columns.Add("email_cli", 400);
+            lvtabela.Columns.Add("id", 80);
+            lvtabela.Columns.Add("nome_album", 110);
+            lvtabela.Columns.Add("nome_cli", 250);
+            lvtabela.Columns.Add("email_cli", 250);
+            lvtabela.Columns.Add("album_criacao", 150);
             StartPosition = FormStartPosition.Manual;
             this.Left = 0;
 
@@ -51,6 +52,7 @@ namespace SistemaMarques
                     lv.SubItems.Add(dr["nome_album"].ToString());
                     lv.SubItems.Add(dr["nome_cli"].ToString());
                     lv.SubItems.Add(dr["email_cli"].ToString());
+                    lv.SubItems.Add(dr["album_criacao"].ToString());
 
 
                     lvtabela.Items.Add(lv);
@@ -128,6 +130,11 @@ namespace SistemaMarques
                 //MessageBox.Show("Linha selecionada: " + indiceLinhaSelecionada);
                 //lvtabela.Items[indiceLinhaSelecionada].SubItems[1].Text = "testeando" ;
             }
+        }
+
+        private void btnimagens_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

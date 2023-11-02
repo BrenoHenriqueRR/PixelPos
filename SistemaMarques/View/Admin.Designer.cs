@@ -70,6 +70,7 @@
             this.btnrelatorio.TabIndex = 7;
             this.btnrelatorio.Text = "Relatório";
             this.btnrelatorio.UseVisualStyleBackColor = false;
+            this.btnrelatorio.Click += new System.EventHandler(this.btnrelatorio_Click);
             // 
             // btnExcluir
             // 
