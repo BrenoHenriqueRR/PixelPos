@@ -72,6 +72,7 @@
             this.linkLabel1.TabIndex = 1;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Forgot password?";
+            this.linkLabel1.Visible = false;
             // 
             // btncadastrar
             // 

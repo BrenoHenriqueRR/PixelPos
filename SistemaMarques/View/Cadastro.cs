@@ -15,6 +15,7 @@ using System.Net.Mail;
 using System.Globalization;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Threading;
+using SistemaMarques.Controller;
 
 namespace SistemaMarques
 {
@@ -120,22 +121,14 @@ namespace SistemaMarques
                 string destinatario = e_mail;
                 string assunto = "Criação de conta:";
                 i = GerarCodigo();
-                string HTMLEmail =
-                    $@"<!DOCTYPE html>
-                    <html lang = ""pt-br"">
-                    <head>LerMangas</head>
-                    <meta charset=""utf-8""/>
-                    <body>
-                        <h1>Opa ,Tudo Bom?</h1>
-                        <p>Um novo código de validação do email pessoal (PIN de segurança) foi criado.</p>
-                        <br>Esse código de validação é importante para verificar a existência do seu email, dessa forma, por exemplo, ficará
-                            mais fácil redefinir a sua senha de acesso, caso você a perca.
-                        <p>Codigo de Validação:</p>
-                        <h2>" + i + @"</h2>
-                    </body>
-                    </html>";
-                string testehtml = HTMLEmail;
 
+                Email html = new Email();
+                string armazena = html.enviarEmail();
+                string testehtml = armazena + "<p class= \"verification - code\">" + i +
+                                                @"</p> 
+                                                </div>
+                                                </body>
+                                                </html>";
                 SmtpClient client = new SmtpClient("smtp.office365.com");
                 client.Port = 587;
                 client.EnableSsl = true;

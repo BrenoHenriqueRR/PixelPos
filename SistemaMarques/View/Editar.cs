@@ -38,7 +38,20 @@ namespace SistemaMarques.View
 
         private void Editar_Load(object sender, EventArgs e)
         {
-
+            Connection conn = new Connection();
+            SqlCommand sqlCom = new SqlCommand();
+            sqlCom.Connection = conn.ReturnConnection();
+            sqlCom.CommandText = @"SELECT * FROM Imagens WHERE id = @id";
+            sqlCom.Parameters.AddWithValue("@id",id);
+            using (SqlDataReader dr = sqlCom.ExecuteReader())
+            {
+                if (dr.Read())
+                {
+                    txbnome_album.Text = dr["nome_album"].ToString();
+                    txbnome_cli.Text = dr["nome_cli"].ToString();
+                    txbemail_cli.Text = dr["email_cli"].ToString();
+                }
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)

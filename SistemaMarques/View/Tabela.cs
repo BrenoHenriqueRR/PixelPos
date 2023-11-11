@@ -19,7 +19,7 @@ namespace SistemaMarques
         public Tabela()
         {
             InitializeComponent();
-           // lvtabela.View = View.Details;
+            // lvtabela.View = View.Details;
             lvtabela.Columns.Add("id", 80);
             lvtabela.Columns.Add("nome_album", 110);
             lvtabela.Columns.Add("nome_cli", 250);
@@ -27,7 +27,6 @@ namespace SistemaMarques
             lvtabela.Columns.Add("album_criacao", 150);
             StartPosition = FormStartPosition.Manual;
             this.Left = 0;
-
         }
 
         private void Galeria_Load(object sender, EventArgs e)
@@ -48,7 +47,6 @@ namespace SistemaMarques
                 while (dr.Read())
                 {
                     ListViewItem lv = new ListViewItem(dr["id"].ToString());
-                    //lv.SubItems.Add(dr["imagens_binar"].ToString());
                     lv.SubItems.Add(dr["nome_album"].ToString());
                     lv.SubItems.Add(dr["nome_cli"].ToString());
                     lv.SubItems.Add(dr["email_cli"].ToString());
@@ -68,7 +66,7 @@ namespace SistemaMarques
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void pixelPOSDataSetBindingSource_CurrentChanged(object sender, EventArgs e)
@@ -89,34 +87,42 @@ namespace SistemaMarques
                 sqlCom.Connection = conn.ReturnConnection();
                 sqlCom.CommandText = "DELETE FROM Imagens WHERE id = @id";
                 sqlCom.Parameters.AddWithValue("@id", id);
+                DialogResult resultado = MessageBox.Show("Tem certeza que deseja excluir?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (resultado == DialogResult.Yes)
+                {
 
-                try
-                {
-                    //deleta por id
-                   sqlCom.ExecuteNonQuery();
-                    MessageBox.Show(
-                    "Album deletado com Sucesso",
-                    "",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information
-                   );
-                    lvtabela.Items.RemoveAt(indiceLinhaSelecionada);
+                    try
+                    {
+                        //deleta por id
+                        sqlCom.ExecuteNonQuery();
+                        MessageBox.Show(
+                        "Album deletado com Sucesso",
+                        "",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information
+                       );
+                        lvtabela.Items.RemoveAt(indiceLinhaSelecionada);
+                    }
+                    catch (Exception err)
+                    {
+                        throw new Exception("Erro: Problemas ao inserir colaborador no banco.\n"
+                            + err.Message);
+                    }
+                    finally
+                    {
+                        conn.CloseConnection();
+                    }
                 }
-                catch (Exception err)
+                else
                 {
-                    throw new Exception("Erro: Problemas ao inserir colaborador no banco.\n"
-                        + err.Message);
-                }
-                finally
-                {
-                    conn.CloseConnection();
+                    return;
                 }
             }
-            
+
         }
 
         private void btneditar_Click(object sender, EventArgs e)
-        { 
+        {
             if (lvtabela.SelectedItems.Count > 0)
             {
                 // int editarid = lvtabela.SelectedIndices[0];
@@ -134,7 +140,95 @@ namespace SistemaMarques
 
         private void btnimagens_Click(object sender, EventArgs e)
         {
+            Connection conn = new Connection();
+            SqlCommand sqlCom = new SqlCommand();
 
+            int indiceLinhaSelecionada;
+            if (lvtabela.SelectedItems.Count > 0)
+            {
+                indiceLinhaSelecionada = lvtabela.SelectedIndices[0];
+                int id = Convert.ToInt32(lvtabela.Items[indiceLinhaSelecionada].SubItems[0].Text);
+                sqlCom.Connection = conn.ReturnConnection();
+                sqlCom.CommandText = "SELECT * FROM Imagens WHERE id = @id";
+                sqlCom.Parameters.AddWithValue("@id", id);
+                
+                try
+                {
+                    //executa a query e manda para o outro form
+                    SqlDataReader query = sqlCom.ExecuteReader();
+                    MessageBox.Show(id.ToString());
+                    Imagens imagens = new Imagens(query);
+                    imagens.ShowDialog();
+                }
+                catch (Exception err)
+                {
+                    throw new Exception("Erro: Problemas ao inserir colaborador no banco.\n"
+                        + err.Message);
+                }
+                finally
+                {
+                    conn.CloseConnection();
+                }
+            }
+
+
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Connection conn = new Connection();
+            SqlCommand sqlCom = new SqlCommand();
+
+            string dataString = txbpesquisar.Text;
+            DateTime album;
+            DateTime.TryParse(dataString, out album);
+
+
+            if (txbpesquisar.Text == "")
+            {
+                Galeria_Load(sender, e);
+            }
+            else
+            {
+                sqlCom.Connection = conn.ReturnConnection();
+                sqlCom.CommandText = @"SELECT * FROM Imagens 
+                                        WHERE id Like @searchTerm 
+                                        OR nome_album LIKE @searchTerm 
+                                        OR nome_cli LIKE @searchTerm 
+                                        OR email_cli LIKE @searchTerm";
+                sqlCom.Parameters.AddWithValue("@searchTerm", "%" + txbpesquisar.Text + "%");
+               // sqlCom.Parameters.AddWithValue("@searchTerm2", "%" + album + "%");
+                try
+                {
+                    SqlDataReader dr = sqlCom.ExecuteReader();
+                    lvtabela.Items.Clear();
+                    //Enquanto for possível continuar a leitura das linhas que foram retornadas na consulta, execute.
+                    while (dr.Read())
+                    {
+                        ListViewItem lv = new ListViewItem(dr["id"].ToString());
+                        //lv.SubItems.Add(dr["imagens_binar"].ToString());
+                        lv.SubItems.Add(dr["nome_album"].ToString());
+                        lv.SubItems.Add(dr["nome_cli"].ToString());
+                        lv.SubItems.Add(dr["email_cli"].ToString());
+                        lv.SubItems.Add(dr["album_criacao"].ToString());
+
+                        lvtabela.Items.Add(lv);
+                        txbpesquisar.Clear();
+                    }
+                    dr.Close();
+                }
+                catch (Exception err)
+                {
+                    throw new Exception("Erro: Problemas ao inserir colaborador no banco.\n"
+                        + err.Message);
+                }
+            }
         }
     }
 }

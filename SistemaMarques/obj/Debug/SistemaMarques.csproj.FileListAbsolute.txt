@@ -53,3 +53,4 @@ C:\Users\breno\source\repos\BrenoKratos\SistemaMarques\BrenoKratos\SistemaMarque
 C:\Users\breno\source\repos\BrenoKratos\SistemaMarques\BrenoKratos\SistemaMarques\SistemaMarques\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
 C:\Users\breno\source\repos\BrenoKratos\SistemaMarques\BrenoKratos\SistemaMarques\SistemaMarques\obj\Debug\SistemaMarques.View.Exibir_imagens.resources
 C:\Users\breno\source\repos\BrenoKratos\SistemaMarques\BrenoKratos\SistemaMarques\SistemaMarques\obj\Debug\SistemaMarques.View.Relatorio.resources
+C:\Users\breno\source\repos\BrenoKratos\SistemaMarques\BrenoKratos\SistemaMarques\SistemaMarques\obj\Debug\SistemaMarques.View.Imagens.resources

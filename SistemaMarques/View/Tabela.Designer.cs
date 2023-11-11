@@ -30,14 +30,21 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("");
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Tabela));
             this.pixelPOSDataSet = new SistemaMarques.PixelPOSDataSet();
             this.pixelPOSDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lvtabela = new System.Windows.Forms.ListView();
             this.btnexcluir = new System.Windows.Forms.Button();
             this.btneditar = new System.Windows.Forms.Button();
             this.btnimagens = new System.Windows.Forms.Button();
+            this.pbpesquisar = new System.Windows.Forms.PictureBox();
+            this.txbpesquisar = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lbtabela = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pixelPOSDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pixelPOSDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbpesquisar)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pixelPOSDataSet
@@ -104,12 +111,54 @@
             this.btnimagens.UseVisualStyleBackColor = false;
             this.btnimagens.Click += new System.EventHandler(this.btnimagens_Click);
             // 
+            // pbpesquisar
+            // 
+            this.pbpesquisar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbpesquisar.Image = ((System.Drawing.Image)(resources.GetObject("pbpesquisar.Image")));
+            this.pbpesquisar.Location = new System.Drawing.Point(1097, 38);
+            this.pbpesquisar.Name = "pbpesquisar";
+            this.pbpesquisar.Size = new System.Drawing.Size(58, 49);
+            this.pbpesquisar.TabIndex = 5;
+            this.pbpesquisar.TabStop = false;
+            this.pbpesquisar.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // txbpesquisar
+            // 
+            this.txbpesquisar.Location = new System.Drawing.Point(561, 38);
+            this.txbpesquisar.Multiline = true;
+            this.txbpesquisar.Name = "txbpesquisar";
+            this.txbpesquisar.Size = new System.Drawing.Size(530, 32);
+            this.txbpesquisar.TabIndex = 6;
+            this.txbpesquisar.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Gray;
+            this.panel1.Controls.Add(this.lbtabela);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(522, 75);
+            this.panel1.TabIndex = 7;
+            // 
+            // lbtabela
+            // 
+            this.lbtabela.AutoSize = true;
+            this.lbtabela.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbtabela.Location = new System.Drawing.Point(39, 20);
+            this.lbtabela.Name = "lbtabela";
+            this.lbtabela.Size = new System.Drawing.Size(139, 38);
+            this.lbtabela.TabIndex = 2;
+            this.lbtabela.Text = "PAINEL";
+            // 
             // Tabela
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1169, 642);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pbpesquisar);
+            this.Controls.Add(this.txbpesquisar);
             this.Controls.Add(this.btnimagens);
             this.Controls.Add(this.btneditar);
             this.Controls.Add(this.btnexcluir);
@@ -118,11 +167,15 @@
             this.Location = new System.Drawing.Point(205, 0);
             this.Name = "Tabela";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ldgaleria";
+            this.Text = " ";
             this.Load += new System.EventHandler(this.Galeria_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pixelPOSDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pixelPOSDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbpesquisar)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -133,5 +186,9 @@
         private System.Windows.Forms.Button btnexcluir;
         private System.Windows.Forms.Button btneditar;
         private System.Windows.Forms.Button btnimagens;
+        private System.Windows.Forms.PictureBox pbpesquisar;
+        private System.Windows.Forms.TextBox txbpesquisar;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lbtabela;
     }
 }
