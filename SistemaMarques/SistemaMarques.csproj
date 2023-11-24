@@ -72,8 +72,11 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\CriarHash.cs" />
     <Compile Include="Controller\Email.cs" />
     <Compile Include="Controller\Excel.cs" />
+    <Compile Include="Controller\GerarSenha.cs" />
+    <Compile Include="Controller\Usuario.cs" />
     <Compile Include="PixelPOSDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -92,11 +95,17 @@
     <Compile Include="View\Editar.Designer.cs">
       <DependentUpon>Editar.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Excluir.cs">
+    <Compile Include="View\EsqueciSenha.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Excluir.Designer.cs">
-      <DependentUpon>Excluir.cs</DependentUpon>
+    <Compile Include="View\EsqueciSenha.Designer.cs">
+      <DependentUpon>EsqueciSenha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Ajuda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Ajuda.Designer.cs">
+      <DependentUpon>Ajuda.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Exibir_imagens.cs">
       <SubType>Form</SubType>
@@ -115,6 +124,12 @@
     </Compile>
     <Compile Include="View\Imagens.Designer.cs">
       <DependentUpon>Imagens.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\RecuperarSenha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\RecuperarSenha.Designer.cs">
+      <DependentUpon>RecuperarSenha.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Relatorio.cs">
       <SubType>Form</SubType>
@@ -154,8 +169,11 @@
     <EmbeddedResource Include="View\Editar.resx">
       <DependentUpon>Editar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Excluir.resx">
-      <DependentUpon>Excluir.cs</DependentUpon>
+    <EmbeddedResource Include="View\EsqueciSenha.resx">
+      <DependentUpon>EsqueciSenha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Ajuda.resx">
+      <DependentUpon>Ajuda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Exibir_imagens.resx">
       <DependentUpon>Exibir_imagens.cs</DependentUpon>
@@ -165,6 +183,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Imagens.resx">
       <DependentUpon>Imagens.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\RecuperarSenha.resx">
+      <DependentUpon>RecuperarSenha.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Relatorio.resx">
       <DependentUpon>Relatorio.cs</DependentUpon>
@@ -215,8 +236,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Css\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

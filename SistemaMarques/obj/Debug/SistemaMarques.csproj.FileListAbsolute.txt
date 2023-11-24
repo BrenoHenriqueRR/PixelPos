@@ -40,7 +40,6 @@ C:\Users\breno\source\repos\BrenoKratos\SistemaMarques\BrenoKratos\SistemaMarque
 C:\Users\breno\source\repos\BrenoKratos\SistemaMarques\BrenoKratos\SistemaMarques\SistemaMarques\obj\Debug\SistemaMarques.exibir_inserir.resources
 C:\Users\breno\source\repos\BrenoKratos\SistemaMarques\BrenoKratos\SistemaMarques\SistemaMarques\obj\Debug\SistemaMarques.Admin.resources
 C:\Users\breno\source\repos\BrenoKratos\SistemaMarques\BrenoKratos\SistemaMarques\SistemaMarques\obj\Debug\SistemaMarques.Tabela.resources
-C:\Users\breno\source\repos\BrenoKratos\SistemaMarques\BrenoKratos\SistemaMarques\SistemaMarques\obj\Debug\SistemaMarques.View.Excluir.resources
 C:\Users\breno\source\repos\BrenoKratos\SistemaMarques\BrenoKratos\SistemaMarques\SistemaMarques\obj\Debug\SistemaMarques.View.Editar.resources
 C:\Users\breno\source\repos\BrenoKratos\SistemaMarques\BrenoKratos\SistemaMarques\SistemaMarques\bin\Debug\QRCoder.dll
 C:\Users\breno\source\repos\BrenoKratos\SistemaMarques\BrenoKratos\SistemaMarques\SistemaMarques\obj\Debug\SistemaMarques.csproj.CopyComplete
@@ -54,3 +53,6 @@ C:\Users\breno\source\repos\BrenoKratos\SistemaMarques\BrenoKratos\SistemaMarque
 C:\Users\breno\source\repos\BrenoKratos\SistemaMarques\BrenoKratos\SistemaMarques\SistemaMarques\obj\Debug\SistemaMarques.View.Exibir_imagens.resources
 C:\Users\breno\source\repos\BrenoKratos\SistemaMarques\BrenoKratos\SistemaMarques\SistemaMarques\obj\Debug\SistemaMarques.View.Relatorio.resources
 C:\Users\breno\source\repos\BrenoKratos\SistemaMarques\BrenoKratos\SistemaMarques\SistemaMarques\obj\Debug\SistemaMarques.View.Imagens.resources
+C:\Users\breno\source\repos\BrenoKratos\SistemaMarques\BrenoKratos\SistemaMarques\SistemaMarques\obj\Debug\SistemaMarques.View.EsqueciSenha.resources
+C:\Users\breno\source\repos\BrenoKratos\SistemaMarques\BrenoKratos\SistemaMarques\SistemaMarques\obj\Debug\SistemaMarques.View.RecuperarSenha.resources
+C:\Users\breno\source\repos\BrenoKratos\SistemaMarques\BrenoKratos\SistemaMarques\SistemaMarques\obj\Debug\SistemaMarques.View.Ajuda.resources

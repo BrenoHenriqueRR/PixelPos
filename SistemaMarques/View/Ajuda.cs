@@ -10,15 +10,20 @@ using System.Windows.Forms;
 
 namespace SistemaMarques.View
 {
-    public partial class Excluir : Form
+    public partial class Ajuda : Form
     {
-        public Excluir()
+        public Ajuda()
         {
             InitializeComponent();
             this.Left = 0;
         }
 
         private void Excluir_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbrelatorio_Click(object sender, EventArgs e)
         {
 
         }

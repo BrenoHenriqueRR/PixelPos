@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Net.NetworkInformation;
@@ -113,6 +114,28 @@ namespace SistemaMarques.View
             SqlDataReader dr = sqlCom.ExecuteReader();
             Excel excel = new Excel();
             excel.gerarExcel(dr);
+            ntiexcel.ShowBalloonTip(2000, "Relatorio", "Relatório foi  enviado para os downloads", ToolTipIcon.Info);
+            ntiexcel_BalloonTipClicked(sender, e);
+        }
+
+        private void ntiexcel_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+        
+        }
+
+        private void ntiexcel_BalloonTipClicked(object sender, EventArgs e)
+        {
+            string diretorioDesejado = @"C:\Users\breno\Downloads\";
+
+            // Certifique-se de que o diretório existe antes de tentar abri-lo
+            if (System.IO.Directory.Exists(diretorioDesejado))
+            {
+                Process.Start("explorer.exe", diretorioDesejado);
+            }
+            else
+            {
+                MessageBox.Show("O diretório especificado não existe.");
+            }
         }
     }
 }

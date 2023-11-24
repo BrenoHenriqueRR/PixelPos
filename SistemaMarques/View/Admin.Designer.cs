@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Admin));
             this.pnopcoes = new System.Windows.Forms.Panel();
             this.btnrelatorio = new System.Windows.Forms.Button();
-            this.btnExcluir = new System.Windows.Forms.Button();
+            this.btnajuda = new System.Windows.Forms.Button();
             this.Btnbiblioteca = new System.Windows.Forms.Button();
             this.btninserir = new System.Windows.Forms.Button();
             this.lbHome = new System.Windows.Forms.Label();
@@ -44,11 +44,11 @@
             this.pnopcoes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.pnopcoes.BackColor = System.Drawing.Color.Black;
-            this.pnopcoes.Controls.Add(this.btnrelatorio);
-            this.pnopcoes.Controls.Add(this.btnExcluir);
             this.pnopcoes.Controls.Add(this.Btnbiblioteca);
             this.pnopcoes.Controls.Add(this.btninserir);
             this.pnopcoes.Controls.Add(this.lbHome);
+            this.pnopcoes.Controls.Add(this.btnrelatorio);
+            this.pnopcoes.Controls.Add(this.btnajuda);
             this.pnopcoes.Cursor = System.Windows.Forms.Cursors.Default;
             this.pnopcoes.Location = new System.Drawing.Point(0, 0);
             this.pnopcoes.Name = "pnopcoes";
@@ -64,7 +64,7 @@
             this.btnrelatorio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnrelatorio.Font = new System.Drawing.Font("Perpetua Titling MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnrelatorio.ForeColor = System.Drawing.Color.White;
-            this.btnrelatorio.Location = new System.Drawing.Point(-4, 471);
+            this.btnrelatorio.Location = new System.Drawing.Point(-3, 346);
             this.btnrelatorio.Name = "btnrelatorio";
             this.btnrelatorio.Size = new System.Drawing.Size(208, 69);
             this.btnrelatorio.TabIndex = 7;
@@ -72,22 +72,22 @@
             this.btnrelatorio.UseVisualStyleBackColor = false;
             this.btnrelatorio.Click += new System.EventHandler(this.btnrelatorio_Click);
             // 
-            // btnExcluir
+            // btnajuda
             // 
-            this.btnExcluir.AutoSize = true;
-            this.btnExcluir.BackColor = System.Drawing.Color.Black;
-            this.btnExcluir.FlatAppearance.BorderSize = 0;
-            this.btnExcluir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
-            this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExcluir.Font = new System.Drawing.Font("Perpetua Titling MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExcluir.ForeColor = System.Drawing.Color.White;
-            this.btnExcluir.Location = new System.Drawing.Point(-4, 346);
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(208, 69);
-            this.btnExcluir.TabIndex = 6;
-            this.btnExcluir.Text = "Excluir";
-            this.btnExcluir.UseVisualStyleBackColor = false;
-            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
+            this.btnajuda.AutoSize = true;
+            this.btnajuda.BackColor = System.Drawing.Color.Black;
+            this.btnajuda.FlatAppearance.BorderSize = 0;
+            this.btnajuda.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.btnajuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnajuda.Font = new System.Drawing.Font("Perpetua Titling MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnajuda.ForeColor = System.Drawing.Color.White;
+            this.btnajuda.Location = new System.Drawing.Point(-3, 476);
+            this.btnajuda.Name = "btnajuda";
+            this.btnajuda.Size = new System.Drawing.Size(208, 69);
+            this.btnajuda.TabIndex = 6;
+            this.btnajuda.Text = "Ajuda";
+            this.btnajuda.UseVisualStyleBackColor = false;
+            this.btnajuda.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // Btnbiblioteca
             // 
@@ -181,7 +181,7 @@
         private System.Windows.Forms.Label lbHome;
         private System.Windows.Forms.Button Btnbiblioteca;
         private System.Windows.Forms.Button btninserir;
-        private System.Windows.Forms.Button btnExcluir;
+        private System.Windows.Forms.Button btnajuda;
         private System.Windows.Forms.Panel pnhome;
         private System.Windows.Forms.Button btnrelatorio;
     }

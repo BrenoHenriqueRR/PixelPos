@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Relatorio));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
@@ -42,6 +44,7 @@
             this.mcData = new System.Windows.Forms.MonthCalendar();
             this.lbrelatorio = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.ntiexcel = new System.Windows.Forms.NotifyIcon(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -202,6 +205,14 @@
             this.panel3.Size = new System.Drawing.Size(1091, 78);
             this.panel3.TabIndex = 2;
             // 
+            // ntiexcel
+            // 
+            this.ntiexcel.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.ntiexcel.Icon = ((System.Drawing.Icon)(resources.GetObject("ntiexcel.Icon")));
+            this.ntiexcel.Text = "Relatório";
+            this.ntiexcel.Visible = true;
+            this.ntiexcel.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.ntiexcel_MouseDoubleClick);
+            // 
             // Relatorio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -243,5 +254,6 @@
         private System.Windows.Forms.ListView lvclientes;
         private System.Windows.Forms.ListView lvalbunscriados;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.NotifyIcon ntiexcel;
     }
 }

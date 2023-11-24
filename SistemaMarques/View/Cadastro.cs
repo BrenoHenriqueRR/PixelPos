@@ -43,27 +43,15 @@ namespace SistemaMarques
         private int i;
         private void button1_Click(object sender, EventArgs e)
         {
-                Connection connection = new Connection();
+            Connection connection = new Connection();
             SqlCommand sqlCommand = new SqlCommand();
+            Usuario user = new Usuario();
+            CriarHash gerarhash = new CriarHash();
 
 
             string data_nasc = msktxbdate.Text;
-            /*msktxbdate.TextChanged += (obj, args) =>
-            {
-                if (DateTime.TryParse(msktxbdate.Text, out DateTime data)){
-                    if (data.Month > 12)
-                    {
-                        MessageBox.Show("Mês inválido. Insira um mês de 1 a 12.");
-                        msktxbdate.Clear(); // Limpa o TextBox
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Data inválida. Insira uma data válida no formato correto.");
-                    msktxbdate.Clear(); // Limpa o TextBox
-                }
-            };*/
             string senha1 = txbsenha.Text;
+            string senhacli = gerarhash.criarHash(senha1);
             string senha2 = txbsenhafirme.Text;
             string e_mail = txbemailCadastrar.Text;
 
@@ -75,7 +63,7 @@ namespace SistemaMarques
             sqlCommand.Parameters.AddWithValue("@NOME", txbfistname.Text);
             sqlCommand.Parameters.AddWithValue("@Data_de_nascimento", msktxbdate.Text);
             sqlCommand.Parameters.AddWithValue("@email", txbemailCadastrar.Text);
-            sqlCommand.Parameters.AddWithValue("@senha", txbsenha.Text);
+            sqlCommand.Parameters.AddWithValue("@senha", senhacli);
             sqlCommand.Parameters.AddWithValue("@CPF", msktxbcpf.Text);
             if (cbfeminino.Checked)
             {
@@ -109,6 +97,14 @@ namespace SistemaMarques
                 MessageBox.Show("Campos Vazios!!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            if (user.selectEmail(e_mail) == 0)
+            {
+                MessageBox.Show("Email ja existe!! Tente outro!",
+                                "",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Exclamation);
+                return;
+            }
             Thread Mensagem = new Thread(() =>
             {
                 MessageBox.Show("Enviando Código de validação por Email\nAguarde...");
@@ -120,11 +116,12 @@ namespace SistemaMarques
                 string senha = "Ul100traman";
                 string destinatario = e_mail;
                 string assunto = "Criação de conta:";
-                i = GerarCodigo();
+                GerarSenha gerars = new GerarSenha();
+                i = gerars.gerar();
 
                 Email html = new Email();
                 string armazena = html.enviarEmail();
-                string testehtml = armazena + "<p class= \"verification - code\">" + i +
+                string testehtml = armazena + @"<p class= ""verification-code"">" + i +
                                                 @"</p> 
                                                 </div>
                                                 </body>
@@ -266,12 +263,6 @@ namespace SistemaMarques
             this.WindowState = FormWindowState.Normal;
         }
 
-        public int GerarCodigo()
-        {
-            Random random = new Random();
-            int codigo = random.Next(1024,9568);
-            return codigo;
-        }
     }
 }
 

@@ -90,9 +90,9 @@ namespace SistemaMarques
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            AtivarBotao(btnExcluir);
+            AtivarBotao(btnajuda);
             bibliotecaClose();
-            Excluir apagar = new Excluir();
+            Ajuda apagar = new Ajuda();
             Biblioteca_Load(apagar);
         }
 

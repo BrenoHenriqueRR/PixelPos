@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemaMarques.View;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace SistemaMarques
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Cadastro());
+            Application.Run(new Admin());
         }
     }
 }

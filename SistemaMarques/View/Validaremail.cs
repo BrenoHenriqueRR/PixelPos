@@ -65,6 +65,15 @@ namespace SistemaMarques
 
         private void btnproximo_Click(object sender, EventArgs e)
         {
+            if(string.IsNullOrWhiteSpace(textBox1.Text))
+            {
+                MessageBox.Show("Campo Vazio!!", "Digite novamente",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                    );
+                return;
+            }
+
             if(int.Parse(textBox1.Text) == codigo)
             {
                 validarcodigo = true;

@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.Pncadastro = new System.Windows.Forms.Panel();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.lkfpassword = new System.Windows.Forms.LinkLabel();
             this.btncadastrar = new System.Windows.Forms.Button();
             this.btAcessar = new System.Windows.Forms.Button();
             this.lbLogin = new System.Windows.Forms.Label();
@@ -46,7 +46,7 @@
             // 
             this.Pncadastro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.Pncadastro.BackColor = System.Drawing.Color.White;
-            this.Pncadastro.Controls.Add(this.linkLabel1);
+            this.Pncadastro.Controls.Add(this.lkfpassword);
             this.Pncadastro.Controls.Add(this.btncadastrar);
             this.Pncadastro.Controls.Add(this.btAcessar);
             this.Pncadastro.Controls.Add(this.lbLogin);
@@ -62,17 +62,17 @@
             this.Pncadastro.TabIndex = 0;
             this.Pncadastro.Paint += new System.Windows.Forms.PaintEventHandler(this.Pncadastro_Paint);
             // 
-            // linkLabel1
+            // lkfpassword
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.Location = new System.Drawing.Point(34, 484);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(129, 18);
-            this.linkLabel1.TabIndex = 1;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Forgot password?";
-            this.linkLabel1.Visible = false;
+            this.lkfpassword.AutoSize = true;
+            this.lkfpassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lkfpassword.Location = new System.Drawing.Point(34, 484);
+            this.lkfpassword.Name = "lkfpassword";
+            this.lkfpassword.Size = new System.Drawing.Size(129, 18);
+            this.lkfpassword.TabIndex = 1;
+            this.lkfpassword.TabStop = true;
+            this.lkfpassword.Text = "Forgot password?";
+            this.lkfpassword.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // btncadastrar
             // 
@@ -196,7 +196,7 @@
         private System.Windows.Forms.Label lbtextologin;
         private System.Windows.Forms.Button btAcessar;
         private System.Windows.Forms.Label lbLogin;
-        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.LinkLabel lkfpassword;
         private System.Windows.Forms.Button btncadastrar;
     }
 }

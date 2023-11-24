@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SistemaMarques.Controller;
+using SistemaMarques.View;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -41,7 +43,7 @@ namespace SistemaMarques
 
             Cadastro form2 = new Cadastro();
             form2.ShowDialog();
-            
+
 
         }
 
@@ -50,31 +52,35 @@ namespace SistemaMarques
         {
             Connection connection = new Connection();
             SqlCommand sqlCommand = new SqlCommand();
+            CriarHash hash = new CriarHash();
+
+            string hashedsenha = hash.criarHash(txbsenhalogin.Text);
+            string isValid = hash.verificaHash(txbsenhalogin.Text, hashedsenha);
+
             sqlCommand.Connection = connection.ReturnConnection();
+            sqlCommand.CommandText = "SELECT * FROM TB_Cadastro WHERE email = @email and senha = @senha";
             sqlCommand.Parameters.AddWithValue("@email", txbemail.Text);
-            sqlCommand.Parameters.AddWithValue("@senha", txbsenhalogin.Text);
-            sqlCommand.CommandText = "SELECT * FROM TB_Cadastro WHERE email = @email AND senha = @senha";
+            sqlCommand.Parameters.AddWithValue("@senha", isValid);
 
-
-            if (string.IsNullOrWhiteSpace(txbemail.Text) | string.IsNullOrWhiteSpace(txbsenhalogin.Text) )
+            if (string.IsNullOrWhiteSpace(txbemail.Text) | string.IsNullOrWhiteSpace(txbsenhalogin.Text))
             {
                 MessageBox.Show("Campos Vazios!! Por favor digite novamente.");
-                return; 
+                return;
             }
             using (SqlDataReader reader = sqlCommand.ExecuteReader())
-            {    
-                  if (reader.HasRows)
-                  {
-                     MessageBox.Show("Login bem-sucedido!");
-                     Admin biblioteca = new Admin();
-                     this.Visible = false;
-                     biblioteca.Show();
-                  }
-                  else
-                  {
+            {
+                if (reader.HasRows)
+                {
+                    MessageBox.Show("Login bem-sucedido!");
+                    Admin biblioteca = new Admin();
+                    this.Visible = false;
+                    biblioteca.Show();
+                }
+                else
+                {
                     MessageBox.Show("Email ou senha incorretos!");
                     return;
-                  }
+                }
             }
         }
 
@@ -94,6 +100,12 @@ namespace SistemaMarques
         private void txbsenhalogin_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            EsqueciSenha esqueci = new EsqueciSenha();
+            esqueci.ShowDialog();
         }
     }
 }

@@ -62,7 +62,7 @@
             this.btcadastrar.Location = new System.Drawing.Point(47, 447);
             this.btcadastrar.Name = "btcadastrar";
             this.btcadastrar.Size = new System.Drawing.Size(566, 37);
-            this.btcadastrar.TabIndex = 0;
+            this.btcadastrar.TabIndex = 6;
             this.btcadastrar.Text = "CADASTRAR";
             this.btcadastrar.UseVisualStyleBackColor = false;
             this.btcadastrar.Click += new System.EventHandler(this.button1_Click);
@@ -85,7 +85,7 @@
             this.txbfistname.Location = new System.Drawing.Point(47, 129);
             this.txbfistname.Name = "txbfistname";
             this.txbfistname.Size = new System.Drawing.Size(231, 22);
-            this.txbfistname.TabIndex = 2;
+            this.txbfistname.TabIndex = 1;
             this.txbfistname.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // btnentrar
@@ -127,7 +127,7 @@
             this.txbemailCadastrar.Location = new System.Drawing.Point(47, 208);
             this.txbemailCadastrar.Name = "txbemailCadastrar";
             this.txbemailCadastrar.Size = new System.Drawing.Size(231, 22);
-            this.txbemailCadastrar.TabIndex = 6;
+            this.txbemailCadastrar.TabIndex = 2;
             this.txbemailCadastrar.TextChanged += new System.EventHandler(this.txbemail_TextChanged);
             // 
             // lbsenharegister
@@ -219,7 +219,7 @@
             this.txbsenha.Name = "txbsenha";
             this.txbsenha.PasswordChar = '*';
             this.txbsenha.Size = new System.Drawing.Size(212, 22);
-            this.txbsenha.TabIndex = 22;
+            this.txbsenha.TabIndex = 3;
             this.txbsenha.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // msktxbdate
@@ -228,7 +228,7 @@
             this.msktxbdate.Mask = "00/00/0000";
             this.msktxbdate.Name = "msktxbdate";
             this.msktxbdate.Size = new System.Drawing.Size(125, 22);
-            this.msktxbdate.TabIndex = 23;
+            this.msktxbdate.TabIndex = 4;
             this.msktxbdate.ValidatingType = typeof(System.DateTime);
             this.msktxbdate.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.msktxbdate_MaskInputRejected);
             // 
@@ -239,7 +239,7 @@
             this.txbsenhafirme.Name = "txbsenhafirme";
             this.txbsenhafirme.PasswordChar = '*';
             this.txbsenhafirme.Size = new System.Drawing.Size(212, 22);
-            this.txbsenhafirme.TabIndex = 24;
+            this.txbsenhafirme.TabIndex = 6;
             this.txbsenhafirme.TextChanged += new System.EventHandler(this.txbsenhafirme_TextChanged);
             // 
             // msktxbcpf
@@ -248,7 +248,7 @@
             this.msktxbcpf.Mask = "000.000.000-00";
             this.msktxbcpf.Name = "msktxbcpf";
             this.msktxbcpf.Size = new System.Drawing.Size(125, 22);
-            this.msktxbcpf.TabIndex = 25;
+            this.msktxbcpf.TabIndex = 5;
             // 
             // cbmostrarsenha2
             // 
