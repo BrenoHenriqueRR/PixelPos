@@ -33,9 +33,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
-            this.lvquantidadef = new System.Windows.Forms.ListView();
-            this.lvclientes = new System.Windows.Forms.ListView();
-            this.lvalbunscriados = new System.Windows.Forms.ListView();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -45,6 +42,7 @@
             this.lbrelatorio = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.ntiexcel = new System.Windows.Forms.NotifyIcon(this.components);
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -65,10 +63,8 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.richTextBox1);
             this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.lvquantidadef);
-            this.panel2.Controls.Add(this.lvclientes);
-            this.panel2.Controls.Add(this.lvalbunscriados);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
@@ -87,42 +83,6 @@
             this.button2.Text = "Mostrar dados";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // lvquantidadef
-            // 
-            this.lvquantidadef.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.lvquantidadef.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lvquantidadef.HideSelection = false;
-            this.lvquantidadef.Location = new System.Drawing.Point(211, 200);
-            this.lvquantidadef.Name = "lvquantidadef";
-            this.lvquantidadef.Size = new System.Drawing.Size(252, 33);
-            this.lvquantidadef.TabIndex = 5;
-            this.lvquantidadef.UseCompatibleStateImageBehavior = false;
-            // 
-            // lvclientes
-            // 
-            this.lvclientes.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.lvclientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lvclientes.HideSelection = false;
-            this.lvclientes.Location = new System.Drawing.Point(211, 133);
-            this.lvclientes.Name = "lvclientes";
-            this.lvclientes.Size = new System.Drawing.Size(252, 48);
-            this.lvclientes.TabIndex = 4;
-            this.lvclientes.UseCompatibleStateImageBehavior = false;
-            this.lvclientes.SelectedIndexChanged += new System.EventHandler(this.listView2_SelectedIndexChanged);
-            // 
-            // lvalbunscriados
-            // 
-            this.lvalbunscriados.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.lvalbunscriados.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lvalbunscriados.HideSelection = false;
-            this.lvalbunscriados.Location = new System.Drawing.Point(167, 84);
-            this.lvalbunscriados.Name = "lvalbunscriados";
-            this.lvalbunscriados.Size = new System.Drawing.Size(252, 61);
-            this.lvalbunscriados.TabIndex = 3;
-            this.lvalbunscriados.UseCompatibleStateImageBehavior = false;
-            this.lvalbunscriados.View = System.Windows.Forms.View.SmallIcon;
-            this.lvalbunscriados.SelectedIndexChanged += new System.EventHandler(this.lvalbunscriados_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -213,6 +173,17 @@
             this.ntiexcel.Visible = true;
             this.ntiexcel.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.ntiexcel_MouseDoubleClick);
             // 
+            // richTextBox1
+            // 
+            this.richTextBox1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox1.Location = new System.Drawing.Point(178, 91);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(50, 44);
+            this.richTextBox1.TabIndex = 7;
+            this.richTextBox1.Text = "";
+            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
+            // 
             // Relatorio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -250,10 +221,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.ListView lvquantidadef;
-        private System.Windows.Forms.ListView lvclientes;
-        private System.Windows.Forms.ListView lvalbunscriados;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.NotifyIcon ntiexcel;
+        private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }

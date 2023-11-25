@@ -19,8 +19,8 @@ namespace SistemaMarques.View
         public Relatorio()
         {
             InitializeComponent();
-            lvalbunscriados.Columns.Add("Total de albuns");
             Left = 0;
+            richTextBox1.ReadOnly = true;
 
         }
 
@@ -54,6 +54,7 @@ namespace SistemaMarques.View
 
         private void button2_Click(object sender, EventArgs e)
         {
+            Relatorio_Load(sender, e);
             Connection conn = new Connection();
             SqlCommand sqlCom = new SqlCommand();
 
@@ -74,9 +75,7 @@ namespace SistemaMarques.View
             SqlDataReader dr = sqlCom.ExecuteReader();
             while (dr.Read())
             {
-                ListViewItem lv = new ListViewItem(dr["TotalAlbuns"].ToString());
-                //string teste3 = dr.ToString();
-                lvalbunscriados.Items.Add(lv);
+                richTextBox1.Text = dr["TotalAlbuns"].ToString();
             }
             //ListViewItem lv = new ListViewItem(dr["Totalalbuns"].ToString());
             //lvalbunscriados.Items.Add(lv);
@@ -136,6 +135,16 @@ namespace SistemaMarques.View
             {
                 MessageBox.Show("O diretório especificado não existe.");
             }
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

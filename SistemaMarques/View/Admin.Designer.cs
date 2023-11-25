@@ -30,11 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Admin));
             this.pnopcoes = new System.Windows.Forms.Panel();
-            this.btnrelatorio = new System.Windows.Forms.Button();
-            this.btnajuda = new System.Windows.Forms.Button();
             this.Btnbiblioteca = new System.Windows.Forms.Button();
             this.btninserir = new System.Windows.Forms.Button();
             this.lbHome = new System.Windows.Forms.Label();
+            this.btnrelatorio = new System.Windows.Forms.Button();
+            this.btnajuda = new System.Windows.Forms.Button();
             this.pnhome = new System.Windows.Forms.Panel();
             this.pnopcoes.SuspendLayout();
             this.SuspendLayout();
@@ -54,40 +54,6 @@
             this.pnopcoes.Name = "pnopcoes";
             this.pnopcoes.Size = new System.Drawing.Size(204, 642);
             this.pnopcoes.TabIndex = 0;
-            // 
-            // btnrelatorio
-            // 
-            this.btnrelatorio.AutoSize = true;
-            this.btnrelatorio.BackColor = System.Drawing.Color.Black;
-            this.btnrelatorio.FlatAppearance.BorderSize = 0;
-            this.btnrelatorio.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
-            this.btnrelatorio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnrelatorio.Font = new System.Drawing.Font("Perpetua Titling MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnrelatorio.ForeColor = System.Drawing.Color.White;
-            this.btnrelatorio.Location = new System.Drawing.Point(-3, 346);
-            this.btnrelatorio.Name = "btnrelatorio";
-            this.btnrelatorio.Size = new System.Drawing.Size(208, 69);
-            this.btnrelatorio.TabIndex = 7;
-            this.btnrelatorio.Text = "Relatório";
-            this.btnrelatorio.UseVisualStyleBackColor = false;
-            this.btnrelatorio.Click += new System.EventHandler(this.btnrelatorio_Click);
-            // 
-            // btnajuda
-            // 
-            this.btnajuda.AutoSize = true;
-            this.btnajuda.BackColor = System.Drawing.Color.Black;
-            this.btnajuda.FlatAppearance.BorderSize = 0;
-            this.btnajuda.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
-            this.btnajuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnajuda.Font = new System.Drawing.Font("Perpetua Titling MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnajuda.ForeColor = System.Drawing.Color.White;
-            this.btnajuda.Location = new System.Drawing.Point(-3, 476);
-            this.btnajuda.Name = "btnajuda";
-            this.btnajuda.Size = new System.Drawing.Size(208, 69);
-            this.btnajuda.TabIndex = 6;
-            this.btnajuda.Text = "Ajuda";
-            this.btnajuda.UseVisualStyleBackColor = false;
-            this.btnajuda.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // Btnbiblioteca
             // 
@@ -140,6 +106,40 @@
             this.lbHome.Text = "Home";
             this.lbHome.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.lbHome.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // btnrelatorio
+            // 
+            this.btnrelatorio.AutoSize = true;
+            this.btnrelatorio.BackColor = System.Drawing.Color.Black;
+            this.btnrelatorio.FlatAppearance.BorderSize = 0;
+            this.btnrelatorio.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.btnrelatorio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnrelatorio.Font = new System.Drawing.Font("Perpetua Titling MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnrelatorio.ForeColor = System.Drawing.Color.White;
+            this.btnrelatorio.Location = new System.Drawing.Point(-3, 357);
+            this.btnrelatorio.Name = "btnrelatorio";
+            this.btnrelatorio.Size = new System.Drawing.Size(208, 69);
+            this.btnrelatorio.TabIndex = 7;
+            this.btnrelatorio.Text = "Relatório";
+            this.btnrelatorio.UseVisualStyleBackColor = false;
+            this.btnrelatorio.Click += new System.EventHandler(this.btnrelatorio_Click);
+            // 
+            // btnajuda
+            // 
+            this.btnajuda.AutoSize = true;
+            this.btnajuda.BackColor = System.Drawing.Color.Black;
+            this.btnajuda.FlatAppearance.BorderSize = 0;
+            this.btnajuda.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.btnajuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnajuda.Font = new System.Drawing.Font("Perpetua Titling MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnajuda.ForeColor = System.Drawing.Color.White;
+            this.btnajuda.Location = new System.Drawing.Point(-3, 476);
+            this.btnajuda.Name = "btnajuda";
+            this.btnajuda.Size = new System.Drawing.Size(208, 69);
+            this.btnajuda.TabIndex = 6;
+            this.btnajuda.Text = "Ajuda";
+            this.btnajuda.UseVisualStyleBackColor = false;
+            this.btnajuda.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // pnhome
             // 

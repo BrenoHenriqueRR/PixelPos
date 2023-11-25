@@ -154,9 +154,10 @@ namespace SistemaMarques
                 {
                     //executa a query e manda para o outro form
                     SqlDataReader query = sqlCom.ExecuteReader();
-                    MessageBox.Show(id.ToString());
-                    Imagens imagens = new Imagens(query);
-                    imagens.ShowDialog();
+                   // Imagens imagens = new Imagens(query);
+                   // imagens.ShowDialog();
+                   Exibir_imagens imagens = new Exibir_imagens(query);
+                   imagens.ShowDialog();
                 }
                 catch (Exception err)
                 {

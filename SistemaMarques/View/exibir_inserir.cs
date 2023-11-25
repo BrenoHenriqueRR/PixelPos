@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using System.IO;
 using static System.Net.Mime.MediaTypeNames;
 using System.Runtime.CompilerServices;
+using System.Windows.Documents;
 
 namespace SistemaMarques
 {
@@ -24,11 +25,7 @@ namespace SistemaMarques
 
         public void exibir_inserir_Load(object sender, EventArgs e)
         {
-            //int larguraDesejada = 1200; // Substitua pelo valor desejado
-            //int alturaDesejada = 800;  // Substitua pelo valor desejado
 
-            // Modifique o tamanho do formulário
-            //this.Size = new System.Drawing.Size(larguraDesejada, alturaDesejada);
         }
 
         private void pnupload_Paint(object sender, PaintEventArgs e)
@@ -51,15 +48,12 @@ namespace SistemaMarques
 
         private void btnupload_Click(object sender, EventArgs e)
         {
-            string LocalPasta = @"C:\Users\breno\OneDrive\Imagens\";
+            string LocalPasta = @"C:\Users\breno\OneDrive\Imagens\PixelPos";
 
             try
             {
-                if (Directory.Exists(LocalPasta))
-                {
-                    return;
-                }
-                DirectoryInfo pasta =   new DirectoryInfo(LocalPasta); 
+                Directory.CreateDirectory(LocalPasta);
+                DirectoryInfo pasta = new DirectoryInfo(LocalPasta); 
 
             }
             catch(Exception err)
@@ -69,7 +63,7 @@ namespace SistemaMarques
             }
 
 
-            OpenFileDialog openFileDialog = new OpenFileDialog();
+                OpenFileDialog openFileDialog = new OpenFileDialog();
                 openFileDialog.Filter = "Arquivos de imagem|*.jpg;*.jpeg;*.png;*.gif;*.bmp|Todos os arquivos|*.*";
                 openFileDialog.Multiselect = true;
                 openFileDialog.Title = "Selecione uma imagem";
@@ -77,19 +71,17 @@ namespace SistemaMarques
             if (openFileDialog.ShowDialog() == DialogResult.OK && openFileDialog.FileNames.Length > 0)
             {
                 //label1.Text = "Quantidade de fotos selecionadas: " + openFileDialog.FileNames.Length;
-              
-                  this.caminhoimagem = openFileDialog.FileName;
 
+                this.caminhoimagem = openFileDialog.FileName;
+                string novoCaminho = Path.Combine(LocalPasta, Path.GetFileName(caminhoimagem));
+                File.Move(caminhoimagem, novoCaminho);
+                MessageBox.Show(caminhoimagem);
             }
             else
             {
                 return;
             }
          }
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnenviar_Click(object sender, EventArgs e)
         { 
@@ -107,7 +99,6 @@ namespace SistemaMarques
             sqlCommand.Parameters.AddWithValue("@nome_cli", txbnomecli.Text);
             sqlCommand.Parameters.AddWithValue("@email_cli", txbemailcli.Text);
             sqlCommand.Parameters.AddWithValue("@album_criacao", dataHoraFormatada);
-
 
             try
             {
