@@ -32,10 +32,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Exibir_imagens));
             this.ilimagens = new System.Windows.Forms.ImageList(this.components);
             this.pnexibiri = new System.Windows.Forms.Panel();
-            this.lvimagens = new System.Windows.Forms.ListView();
+            this.btnexcluir = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lbrelatorio = new System.Windows.Forms.Label();
-            this.btnexcluir = new System.Windows.Forms.Button();
+            this.lvimagens = new System.Windows.Forms.ListView();
+            this.hScrollBar1 = new System.Windows.Forms.HScrollBar();
             this.pnexibiri.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -49,6 +50,7 @@
             // pnexibiri
             // 
             this.pnexibiri.BackColor = System.Drawing.Color.White;
+            this.pnexibiri.Controls.Add(this.hScrollBar1);
             this.pnexibiri.Controls.Add(this.btnexcluir);
             this.pnexibiri.Controls.Add(this.panel3);
             this.pnexibiri.Controls.Add(this.lvimagens);
@@ -59,15 +61,17 @@
             this.pnexibiri.TabIndex = 0;
             this.pnexibiri.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // lvimagens
+            // btnexcluir
             // 
-            this.lvimagens.HideSelection = false;
-            this.lvimagens.Location = new System.Drawing.Point(0, 174);
-            this.lvimagens.Name = "lvimagens";
-            this.lvimagens.Size = new System.Drawing.Size(1063, 449);
-            this.lvimagens.TabIndex = 0;
-            this.lvimagens.UseCompatibleStateImageBehavior = false;
-            this.lvimagens.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+            this.btnexcluir.BackColor = System.Drawing.Color.Brown;
+            this.btnexcluir.ForeColor = System.Drawing.Color.White;
+            this.btnexcluir.Location = new System.Drawing.Point(966, 127);
+            this.btnexcluir.Name = "btnexcluir";
+            this.btnexcluir.Size = new System.Drawing.Size(94, 41);
+            this.btnexcluir.TabIndex = 3;
+            this.btnexcluir.Text = "Excluir";
+            this.btnexcluir.UseVisualStyleBackColor = false;
+            this.btnexcluir.Click += new System.EventHandler(this.btnexcluir_Click);
             // 
             // panel3
             // 
@@ -90,17 +94,22 @@
             this.lbrelatorio.Text = "Imagens Album";
             this.lbrelatorio.Click += new System.EventHandler(this.lbrelatorio_Click);
             // 
-            // btnexcluir
+            // lvimagens
             // 
-            this.btnexcluir.BackColor = System.Drawing.Color.Brown;
-            this.btnexcluir.ForeColor = System.Drawing.Color.White;
-            this.btnexcluir.Location = new System.Drawing.Point(966, 127);
-            this.btnexcluir.Name = "btnexcluir";
-            this.btnexcluir.Size = new System.Drawing.Size(94, 41);
-            this.btnexcluir.TabIndex = 3;
-            this.btnexcluir.Text = "Excluir";
-            this.btnexcluir.UseVisualStyleBackColor = false;
-            this.btnexcluir.Click += new System.EventHandler(this.btnexcluir_Click);
+            this.lvimagens.HideSelection = false;
+            this.lvimagens.Location = new System.Drawing.Point(0, 174);
+            this.lvimagens.Name = "lvimagens";
+            this.lvimagens.Size = new System.Drawing.Size(1063, 449);
+            this.lvimagens.TabIndex = 0;
+            this.lvimagens.UseCompatibleStateImageBehavior = false;
+            this.lvimagens.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+            // 
+            // hScrollBar1
+            // 
+            this.hScrollBar1.Location = new System.Drawing.Point(994, 307);
+            this.hScrollBar1.Name = "hScrollBar1";
+            this.hScrollBar1.Size = new System.Drawing.Size(80, 155);
+            this.hScrollBar1.TabIndex = 4;
             // 
             // Exibir_imagens
             // 
@@ -128,5 +137,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label lbrelatorio;
         private System.Windows.Forms.Button btnexcluir;
+        private System.Windows.Forms.HScrollBar hScrollBar1;
     }
 }

@@ -49,7 +49,8 @@ namespace SistemaMarques.View
 
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
-
+            helpProvider1.SetHelpString(button3, "Para Selecionar de uma data até a outro no calendario ,Segure o botão shift do teclado!!");
+            helpProvider1.SetShowHelp(button3, true);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -143,6 +144,16 @@ namespace SistemaMarques.View
         }
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Help.ShowPopup(button3, helpProvider1.GetHelpString(button3), Cursor.Position);
+        }
+
+        private void label3_Click_1(object sender, EventArgs e)
         {
 
         }

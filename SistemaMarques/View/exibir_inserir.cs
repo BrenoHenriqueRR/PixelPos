@@ -67,21 +67,35 @@ namespace SistemaMarques
                 openFileDialog.Filter = "Arquivos de imagem|*.jpg;*.jpeg;*.png;*.gif;*.bmp|Todos os arquivos|*.*";
                 openFileDialog.Multiselect = true;
                 openFileDialog.Title = "Selecione uma imagem";
-
+                
             if (openFileDialog.ShowDialog() == DialogResult.OK && openFileDialog.FileNames.Length > 0)
             {
-                //label1.Text = "Quantidade de fotos selecionadas: " + openFileDialog.FileNames.Length;
+                foreach (var caminhoImagem in openFileDialog.FileNames)
+                {
+                    //label1.Text = "Quantidade de fotos selecionadas: " + openFileDialog.FileNames.Length;
 
-                this.caminhoimagem = openFileDialog.FileName;
-                string novoCaminho = Path.Combine(LocalPasta, Path.GetFileName(caminhoimagem));
-                File.Move(caminhoimagem, novoCaminho);
-                MessageBox.Show(caminhoimagem);
+                    InserirCaminhoNoBanco(caminhoImagem);
+                    //this.caminhoimagem = openFileDialog.FileName;
+                    //string novoCaminho = Path.Combine(LocalPasta, Path.GetFileName(caminhoimagem));
+                    //File.Move(caminhoimagem, novoCaminho);
+                    //MessageBox.Show(caminhoimagem);
+                }
             }
             else
             {
                 return;
             }
          }
+        static void InserirCaminhoNoBanco(string caminhoImagem)
+        {
+            Connection conn = new Connection();
+            SqlCommand sqlCom = new SqlCommand();
+
+            sqlCom.Connection = conn.ReturnConnection();
+            sqlCom.CommandText = "INSERT INTO fotos (id_album,caminho_foto) VALUES (SCOPE_IDENTITY(),@caminho_foto)";
+            sqlCom.Parameters.AddWithValue("@caminhoImagem", caminhoImagem);
+            sqlCom.ExecuteNonQuery();
+        }
 
         private void btnenviar_Click(object sender, EventArgs e)
         { 

@@ -37,10 +37,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txbemailcli = new System.Windows.Forms.TextBox();
-            this.btnenviar = new System.Windows.Forms.Button();
             this.pninserir = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnenviar = new System.Windows.Forms.Button();
             this.pninserir.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -108,7 +108,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(23, 290);
+            this.label3.Location = new System.Drawing.Point(23, 310);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(108, 20);
             this.label3.TabIndex = 11;
@@ -116,23 +116,10 @@
             // 
             // txbemailcli
             // 
-            this.txbemailcli.Location = new System.Drawing.Point(27, 337);
+            this.txbemailcli.Location = new System.Drawing.Point(27, 345);
             this.txbemailcli.Name = "txbemailcli";
             this.txbemailcli.Size = new System.Drawing.Size(529, 22);
             this.txbemailcli.TabIndex = 12;
-            // 
-            // btnenviar
-            // 
-            this.btnenviar.BackColor = System.Drawing.Color.SeaGreen;
-            this.btnenviar.Font = new System.Drawing.Font("Perpetua Titling MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnenviar.ForeColor = System.Drawing.Color.White;
-            this.btnenviar.Location = new System.Drawing.Point(840, 560);
-            this.btnenviar.Name = "btnenviar";
-            this.btnenviar.Size = new System.Drawing.Size(317, 41);
-            this.btnenviar.TabIndex = 15;
-            this.btnenviar.Text = "Enviar";
-            this.btnenviar.UseVisualStyleBackColor = false;
-            this.btnenviar.Click += new System.EventHandler(this.btnenviar_Click);
             // 
             // pninserir
             // 
@@ -148,10 +135,10 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(794, 171);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(790, 171);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(268, 20);
+            this.label4.Size = new System.Drawing.Size(300, 20);
             this.label4.TabIndex = 17;
             this.label4.Text = "Adicione as imagens para o Album";
             this.label4.Click += new System.EventHandler(this.label4_Click);
@@ -164,6 +151,19 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1091, 78);
             this.panel3.TabIndex = 18;
+            // 
+            // btnenviar
+            // 
+            this.btnenviar.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnenviar.Font = new System.Drawing.Font("Perpetua Titling MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnenviar.ForeColor = System.Drawing.Color.White;
+            this.btnenviar.Location = new System.Drawing.Point(840, 560);
+            this.btnenviar.Name = "btnenviar";
+            this.btnenviar.Size = new System.Drawing.Size(317, 41);
+            this.btnenviar.TabIndex = 15;
+            this.btnenviar.Text = "Enviar";
+            this.btnenviar.UseVisualStyleBackColor = false;
+            this.btnenviar.Click += new System.EventHandler(this.btnenviar_Click);
             // 
             // exibir_inserir
             // 
@@ -205,9 +205,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txbemailcli;
-        private System.Windows.Forms.Button btnenviar;
         private System.Windows.Forms.Panel pninserir;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button btnenviar;
     }
 }
