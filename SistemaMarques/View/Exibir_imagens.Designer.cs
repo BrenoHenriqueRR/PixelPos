@@ -36,7 +36,6 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.lbrelatorio = new System.Windows.Forms.Label();
             this.lvimagens = new System.Windows.Forms.ListView();
-            this.hScrollBar1 = new System.Windows.Forms.HScrollBar();
             this.pnexibiri.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -50,7 +49,6 @@
             // pnexibiri
             // 
             this.pnexibiri.BackColor = System.Drawing.Color.White;
-            this.pnexibiri.Controls.Add(this.hScrollBar1);
             this.pnexibiri.Controls.Add(this.btnexcluir);
             this.pnexibiri.Controls.Add(this.panel3);
             this.pnexibiri.Controls.Add(this.lvimagens);
@@ -104,13 +102,6 @@
             this.lvimagens.UseCompatibleStateImageBehavior = false;
             this.lvimagens.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
-            // hScrollBar1
-            // 
-            this.hScrollBar1.Location = new System.Drawing.Point(994, 307);
-            this.hScrollBar1.Name = "hScrollBar1";
-            this.hScrollBar1.Size = new System.Drawing.Size(80, 155);
-            this.hScrollBar1.TabIndex = 4;
-            // 
             // Exibir_imagens
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -137,6 +128,5 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label lbrelatorio;
         private System.Windows.Forms.Button btnexcluir;
-        private System.Windows.Forms.HScrollBar hScrollBar1;
     }
 }
