@@ -31,6 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Relatorio));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.button2 = new System.Windows.Forms.Button();
@@ -42,10 +45,7 @@
             this.lbrelatorio = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.ntiexcel = new System.Windows.Forms.NotifyIcon(this.components);
-            this.button1 = new System.Windows.Forms.Button();
             this.helpProvider1 = new System.Windows.Forms.HelpProvider();
-            this.button3 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -53,8 +53,6 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.label1);
@@ -65,11 +63,44 @@
             this.panel1.Size = new System.Drawing.Size(1119, 475);
             this.panel1.TabIndex = 0;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(706, 26);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(54, 20);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "ajuda";
+            this.label3.Click += new System.EventHandler(this.label3_Click_1);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(693, 49);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 41);
+            this.button3.TabIndex = 6;
+            this.button3.Text = "cilick";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Firebrick;
+            this.button1.Location = new System.Drawing.Point(810, 421);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(269, 33);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Gerar PDF";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.richTextBox1);
+            this.panel2.Controls.Add(this.button3);
             this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label2);
@@ -178,40 +209,9 @@
             this.ntiexcel.Visible = true;
             this.ntiexcel.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.ntiexcel_MouseDoubleClick);
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Firebrick;
-            this.button1.Location = new System.Drawing.Point(810, 421);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(269, 33);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Gerar PDF";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
             // helpProvider1
             // 
             this.helpProvider1.HelpNamespace = "";
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(1004, 31);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 41);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "cilick";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(1016, 11);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(54, 20);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "ajuda";
-            this.label3.Click += new System.EventHandler(this.label3_Click_1);
             // 
             // Relatorio
             // 

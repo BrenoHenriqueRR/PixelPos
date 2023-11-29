@@ -103,7 +103,6 @@ namespace SistemaMarques
             SqlCommand sqlCommand = new SqlCommand();
 
             DateTime dataHoraAtual = DateTime.Now;
-            
 
 
             sqlCommand.Connection = connection.ReturnConnection();
