@@ -103,8 +103,7 @@ namespace SistemaMarques
             SqlCommand sqlCommand = new SqlCommand();
 
             DateTime dataHoraAtual = DateTime.Now;
-            string formato = "dd/MM/yyyy HH:mm:ss";
-            string dataHoraFormatada = dataHoraAtual.ToString(formato);
+            
 
 
             sqlCommand.Connection = connection.ReturnConnection();
@@ -112,7 +111,7 @@ namespace SistemaMarques
             sqlCommand.Parameters.AddWithValue("@nome_album", txbnomealbum.Text);
             sqlCommand.Parameters.AddWithValue("@nome_cli", txbnomecli.Text);
             sqlCommand.Parameters.AddWithValue("@email_cli", txbemailcli.Text);
-            sqlCommand.Parameters.AddWithValue("@album_criacao", dataHoraFormatada);
+            sqlCommand.Parameters.AddWithValue("@album_criacao", dataHoraAtual);
 
             try
             {

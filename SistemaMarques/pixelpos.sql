@@ -1,25 +1,11 @@
-USE pixelpos;
-GO
+CREATE DATABASE PixelPOS
 
+USE PixelPOS;
+GO
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `fotos`
---
 
-IF OBJECT_ID('fotos', 'U') IS NOT NULL
-  DROP TABLE fotos;
-GO
-
-CREATE TABLE fotos (
-  id INT NOT NULL IDENTITY(1,1),
-  id_album INT NOT NULL,
-  caminho_foto VARCHAR(250) DEFAULT NULL,
-  PRIMARY KEY (id),
-  FOREIGN KEY (id_album) REFERENCES imagens(id)
-);
-
--- --------------------------------------------------------
 
 --
 -- Estrutura para tabela `imagens`
@@ -34,7 +20,7 @@ CREATE TABLE imagens (
   nome_album VARCHAR(25) DEFAULT NULL,
   nome_cli VARCHAR(70) DEFAULT NULL,
   email_cli VARCHAR(40) DEFAULT NULL,
-  album_criacao DATETIME NULL DEFAULT NULL,
+  album_criacao SMALLDATETIME NULL DEFAULT NULL,
   PRIMARY KEY (id)
 );
 
@@ -59,3 +45,19 @@ CREATE TABLE tb_cadastro (
   PRIMARY KEY (id)
 );
 GO
+-- Estrutura para tabela `fotos`
+--
+
+
+-- --------------------------------------------------------
+IF OBJECT_ID('fotos', 'U') IS NOT NULL
+  DROP TABLE fotos;
+GO
+
+CREATE TABLE fotos (
+  id INT NOT NULL IDENTITY(1,1),
+  id_album INT NOT NULL,
+  caminho_foto VARCHAR(250) DEFAULT NULL,
+  PRIMARY KEY (id),
+  FOREIGN KEY (id_album) REFERENCES imagens(id)
+);
