@@ -15,8 +15,9 @@ namespace SistemaMarques.Controller
         {
             DateTime dateTime = DateTime.Now;
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
-            string caminhoArquivo = $@"C:\Users\breno\Downloads\Relatorio_{dateTime.ToString("yyyy-MM-dd")}.xlsx";
-
+            pastadownload caminho = new pastadownload();
+            string download = caminho.GetDownloadsPath();
+            string caminhoArquivo = download + $@"/Relatorio_{dateTime.ToString("yyyy-MM-dd HH-mm-ss")}.xlsx";
             using (var package = new ExcelPackage())
             {
                 ExcelWorksheet worksheet = package.Workbook.Worksheets.Add("Relatorio " + dateTime );
@@ -41,7 +42,9 @@ namespace SistemaMarques.Controller
                     worksheet.Cells[linha, 2].Value = sql["nome_album"];
                     worksheet.Cells[linha, 3].Value = sql["nome_cli"];
                     worksheet.Cells[linha, 4].Value = sql["email_cli"];
-                    worksheet.Cells[linha, 5].Value = sql["album_criacao"];
+                    DateTime dataAlbumCriacao = (DateTime)sql["album_criacao"];
+                    worksheet.Cells[linha, 5].Value = dataAlbumCriacao;
+                    worksheet.Cells[linha, 5].Style.Numberformat.Format = "dd/mm/yyyy";
                     linha++;
                 }
                

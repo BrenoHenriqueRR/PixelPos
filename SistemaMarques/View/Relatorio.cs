@@ -20,8 +20,7 @@ namespace SistemaMarques.View
         {
             InitializeComponent();
             Left = 0;
-            richTextBox1.ReadOnly = true;
-
+            RichTextBox1.ReadOnly = true;
         }
 
         private void Relatorio_Load(object sender, EventArgs e)
@@ -33,19 +32,11 @@ namespace SistemaMarques.View
             
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-        }
-
         private void label2_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void listView2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
@@ -76,20 +67,10 @@ namespace SistemaMarques.View
             SqlDataReader dr = sqlCom.ExecuteReader();
             while (dr.Read())
             {
-                richTextBox1.Text = dr["TotalAlbuns"].ToString();
+                RichTextBox1.Text = dr["TotalAlbuns"].ToString();
             }
             //ListViewItem lv = new ListViewItem(dr["Totalalbuns"].ToString());
             //lvalbunscriados.Items.Add(lv);
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void lvalbunscriados_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -112,10 +93,11 @@ namespace SistemaMarques.View
             sqlCom.Parameters.AddWithValue("@datafinal", dataFim);
 
             SqlDataReader dr = sqlCom.ExecuteReader();
+
             Excel excel = new Excel();
             excel.gerarExcel(dr);
-            ntiexcel.ShowBalloonTip(2000, "Relatorio", "Relatório foi  enviado para os downloads", ToolTipIcon.Info);
-            ntiexcel_BalloonTipClicked(sender, e);
+            ntiexcel.BalloonTipClicked += ntiexcel_BalloonTipClicked;
+            ntiexcel.ShowBalloonTip(3000, "Clique para abrir", "Relatório foi  enviado para os downloads", ToolTipIcon.Info);
         }
 
         private void ntiexcel_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -125,7 +107,8 @@ namespace SistemaMarques.View
 
         private void ntiexcel_BalloonTipClicked(object sender, EventArgs e)
         {
-            string diretorioDesejado = @"C:\Users\breno\Downloads\";
+            pastadownload pastadownload = new pastadownload();
+            string diretorioDesejado = pastadownload.GetDownloadsPath();
 
             // Certifique-se de que o diretório existe antes de tentar abri-lo
             if (System.IO.Directory.Exists(diretorioDesejado))
@@ -138,12 +121,7 @@ namespace SistemaMarques.View
             }
         }
 
-        private void panel4_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        private void RichTextBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
@@ -156,6 +134,12 @@ namespace SistemaMarques.View
         private void label3_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            PDF pdf = new PDF();
+            pdf.gerar_pdf();
         }
     }
 }

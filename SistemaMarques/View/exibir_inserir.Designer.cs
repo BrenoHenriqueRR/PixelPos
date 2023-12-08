@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(exibir_inserir));
-            this.btninseririmagem = new System.Windows.Forms.Button();
             this.lbinserir = new System.Windows.Forms.Label();
             this.txbnomealbum = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -37,26 +36,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txbemailcli = new System.Windows.Forms.TextBox();
-            this.pninserir = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnenviar = new System.Windows.Forms.Button();
-            this.pninserir.SuspendLayout();
+            this.lbtextimg = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btninseririmagem
-            // 
-            this.btninseririmagem.BackColor = System.Drawing.Color.Turquoise;
-            this.btninseririmagem.Font = new System.Drawing.Font("Perpetua Titling MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btninseririmagem.ForeColor = System.Drawing.Color.White;
-            this.btninseririmagem.Location = new System.Drawing.Point(80, 119);
-            this.btninseririmagem.Name = "btninseririmagem";
-            this.btninseririmagem.Size = new System.Drawing.Size(317, 51);
-            this.btninseririmagem.TabIndex = 4;
-            this.btninseririmagem.Text = "Inserir Imagens";
-            this.btninseririmagem.UseVisualStyleBackColor = false;
-            this.btninseririmagem.Click += new System.EventHandler(this.btnupload_Click);
             // 
             // lbinserir
             // 
@@ -121,28 +107,6 @@
             this.txbemailcli.Size = new System.Drawing.Size(529, 22);
             this.txbemailcli.TabIndex = 12;
             // 
-            // pninserir
-            // 
-            this.pninserir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pninserir.BackgroundImage")));
-            this.pninserir.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pninserir.Controls.Add(this.btninseririmagem);
-            this.pninserir.Location = new System.Drawing.Point(699, 197);
-            this.pninserir.Name = "pninserir";
-            this.pninserir.Size = new System.Drawing.Size(458, 299);
-            this.pninserir.TabIndex = 16;
-            this.pninserir.Paint += new System.Windows.Forms.PaintEventHandler(this.pninserir_Paint);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(790, 171);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(300, 20);
-            this.label4.TabIndex = 17;
-            this.label4.Text = "Adicione as imagens para o Album";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
-            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Gray;
@@ -157,7 +121,7 @@
             this.btnenviar.BackColor = System.Drawing.Color.SeaGreen;
             this.btnenviar.Font = new System.Drawing.Font("Perpetua Titling MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnenviar.ForeColor = System.Drawing.Color.White;
-            this.btnenviar.Location = new System.Drawing.Point(840, 560);
+            this.btnenviar.Location = new System.Drawing.Point(837, 560);
             this.btnenviar.Name = "btnenviar";
             this.btnenviar.Size = new System.Drawing.Size(317, 41);
             this.btnenviar.TabIndex = 15;
@@ -165,15 +129,34 @@
             this.btnenviar.UseVisualStyleBackColor = false;
             this.btnenviar.Click += new System.EventHandler(this.btnenviar_Click);
             // 
+            // lbtextimg
+            // 
+            this.lbtextimg.AutoSize = true;
+            this.lbtextimg.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbtextimg.Location = new System.Drawing.Point(829, 519);
+            this.lbtextimg.Name = "lbtextimg";
+            this.lbtextimg.Size = new System.Drawing.Size(328, 18);
+            this.lbtextimg.TabIndex = 20;
+            this.lbtextimg.Text = "Clique em Enviar para selecionar as fotos ";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(879, 262);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(221, 255);
+            this.pictureBox1.TabIndex = 21;
+            this.pictureBox1.TabStop = false;
+            // 
             // exibir_inserir
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1169, 642);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.lbtextimg);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.pninserir);
             this.Controls.Add(this.btnenviar);
             this.Controls.Add(this.txbemailcli);
             this.Controls.Add(this.label3);
@@ -188,16 +171,15 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "exibir_inserir";
             this.Load += new System.EventHandler(this.exibir_inserir_Load);
-            this.pninserir.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Button btninseririmagem;
         private System.Windows.Forms.Label lbinserir;
         private System.Windows.Forms.TextBox txbnomealbum;
         private System.Windows.Forms.Label label1;
@@ -205,9 +187,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txbemailcli;
-        private System.Windows.Forms.Panel pninserir;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnenviar;
+        private System.Windows.Forms.Label lbtextimg;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

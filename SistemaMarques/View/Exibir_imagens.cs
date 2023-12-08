@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -52,10 +53,10 @@ namespace SistemaMarques.View
                         ListViewItem item = new ListViewItem();
                         item.ImageIndex = ilimagens.Images.Count - 1;
                         lvimagens.Items.Add(item);
-                        int pontoDeCorte = 32; // O índice até o qual você quer manter os caracteres
+                        //int pontoDeCorte = 32; // O índice até o qual você quer manter os caracteres
 
-                            string resultado = caminhoImagem.Substring(pontoDeCorte);
-                            item.Text = resultado;
+                         //   string resultado = caminhoImagem.Substring(pontoDeCorte);
+                            item.Text = caminhoImagem;
                     }
                 }
             }
@@ -102,7 +103,51 @@ namespace SistemaMarques.View
 
         private void btnexcluir_Click(object sender, EventArgs e)
         {
+            Connection conn = new Connection();
+            SqlCommand sqlCom = new SqlCommand();
 
+            if (lvimagens.SelectedItems.Count > 0)
+            {
+                ListViewItem selectedItem = lvimagens.SelectedItems[0];
+
+                string caminhoImagem = selectedItem.Text;
+
+                DialogResult resultado = MessageBox.Show("Tem certeza que deseja excluir?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (resultado == DialogResult.Yes)
+                {
+
+                    try
+                    {
+                        //deleta por id
+                        sqlCom.Connection = conn.ReturnConnection();
+                        sqlCom.CommandText = "DELETE FROM fotos WHERE caminho_foto = @caminho_foto";
+                        sqlCom.Parameters.AddWithValue("@caminho_foto", caminhoImagem);
+                        sqlCom.ExecuteNonQuery();
+                        MessageBox.Show(
+                        "Foto deletado com Sucesso",
+                        "",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information
+                       );
+                   
+                        lvimagens.Items.RemoveAt(lvimagens.Items.IndexOf(selectedItem));
+                        ilimagens.Images.RemoveAt(selectedItem.ImageIndex);
+                    }
+                    catch (Exception err)
+                    {
+                        throw new Exception("Erro: Problemas ao inserir colaborador no banco.\n"
+                            + err.Message);
+                    }
+                    finally
+                    {
+                        conn.CloseConnection();
+                    }
+                }
+                else
+                {
+                    return;
+                }
+            }
         }
     }
 }
