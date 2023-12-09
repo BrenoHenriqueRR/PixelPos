@@ -17,7 +17,7 @@ namespace SistemaMarques
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new cliente_imagens());
+            Application.Run(new Login());
         }
     }
 }

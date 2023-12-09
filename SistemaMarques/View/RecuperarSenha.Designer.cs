@@ -45,7 +45,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(151, 25);
+            this.pictureBox1.Location = new System.Drawing.Point(163, 25);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(219, 230);
             this.pictureBox1.TabIndex = 7;
@@ -79,6 +79,7 @@
             // 
             this.txbsenharecu.Location = new System.Drawing.Point(68, 95);
             this.txbsenharecu.Name = "txbsenharecu";
+            this.txbsenharecu.PasswordChar = '*';
             this.txbsenharecu.Size = new System.Drawing.Size(370, 22);
             this.txbsenharecu.TabIndex = 8;
             this.txbsenharecu.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
@@ -107,6 +108,7 @@
             // 
             this.txbconfsenharecu.Location = new System.Drawing.Point(68, 187);
             this.txbconfsenharecu.Name = "txbconfsenharecu";
+            this.txbconfsenharecu.PasswordChar = '*';
             this.txbconfsenharecu.Size = new System.Drawing.Size(370, 22);
             this.txbconfsenharecu.TabIndex = 4;
             // 

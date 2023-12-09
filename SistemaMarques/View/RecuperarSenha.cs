@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemaMarques.Controller;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -6,6 +7,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -34,15 +36,18 @@ namespace SistemaMarques.View
 
         private void btnenviar_Click(object sender, EventArgs e)
         {
-            string senha = txbsenharecu.Text;
-            if (senha == txbconfsenharecu.Text) {
+            CriarHash gerarhash = new CriarHash();
+            string recu_senha = txbsenharecu.Text;
+            string senhacli = gerarhash.criarHash(recu_senha);
+            if (recu_senha == txbconfsenharecu.Text) {
                 Connection conn = new Connection();
                 SqlCommand sql = new SqlCommand();
 
 
                 sql.Connection = conn.ReturnConnection();
-                sql.CommandText = ("Update TB_Cadastro set senha = @senha");
-                sql.Parameters.AddWithValue("@senha",senha);
+                sql.CommandText = ("Update TB_Cadastro set senha = @senha where email = @email");
+                sql.Parameters.AddWithValue("@senha",senhacli);
+                sql.Parameters.AddWithValue("@email", email);
 
                 try
                 {

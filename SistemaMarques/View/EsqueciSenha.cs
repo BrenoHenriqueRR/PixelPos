@@ -33,7 +33,6 @@ namespace SistemaMarques.View
 
             Usuario user = new Usuario();
             int verifica = user.selectEmail(e_mail);
-            MessageBox.Show(verifica.ToString());
 
             if (verifica == 1)
             {
