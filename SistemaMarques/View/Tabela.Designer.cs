@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem("");
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Tabela));
             this.pixelPOSDataSet = new SistemaMarques.PixelPOSDataSet();
             this.pixelPOSDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -43,6 +43,7 @@
             this.lbtabela = new System.Windows.Forms.Label();
             this.btnProximo = new System.Windows.Forms.Button();
             this.btnvoltar = new System.Windows.Forms.Button();
+            this.btninserir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pixelPOSDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pixelPOSDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbpesquisar)).BeginInit();
@@ -67,7 +68,7 @@
             this.lvtabela.GridLines = true;
             this.lvtabela.HideSelection = false;
             this.lvtabela.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1});
+            listViewItem5});
             this.lvtabela.Location = new System.Drawing.Point(12, 137);
             this.lvtabela.MultiSelect = false;
             this.lvtabela.Name = "lvtabela";
@@ -172,12 +173,25 @@
             this.btnvoltar.UseVisualStyleBackColor = true;
             this.btnvoltar.Click += new System.EventHandler(this.btnvoltar_Click);
             // 
+            // btninserir
+            // 
+            this.btninserir.BackColor = System.Drawing.Color.DarkCyan;
+            this.btninserir.ForeColor = System.Drawing.Color.White;
+            this.btninserir.Location = new System.Drawing.Point(735, 92);
+            this.btninserir.Name = "btninserir";
+            this.btninserir.Size = new System.Drawing.Size(176, 39);
+            this.btninserir.TabIndex = 10;
+            this.btninserir.Text = "Inserir img";
+            this.btninserir.UseVisualStyleBackColor = false;
+            this.btninserir.Click += new System.EventHandler(this.btninserir_Click);
+            // 
             // Tabela
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1169, 642);
+            this.Controls.Add(this.btninserir);
             this.Controls.Add(this.btnvoltar);
             this.Controls.Add(this.btnProximo);
             this.Controls.Add(this.panel1);
@@ -216,5 +230,6 @@
         private System.Windows.Forms.Label lbtabela;
         private System.Windows.Forms.Button btnProximo;
         private System.Windows.Forms.Button btnvoltar;
+        private System.Windows.Forms.Button btninserir;
     }
 }

@@ -47,6 +47,7 @@ namespace SistemaMarques
             SqlCommand sqlCommand = new SqlCommand();
             Usuario user = new Usuario();
             CriarHash gerarhash = new CriarHash();
+            Email email = new Email();
 
 
             string data_nasc = msktxbdate.Text;
@@ -97,6 +98,13 @@ namespace SistemaMarques
                 MessageBox.Show("Campos Vazios!!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+
+            if (!email.IsValidEmail(e_mail))
+            {
+                MessageBox.Show("Email Invalido!, Insira novamente", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             if (user.selectEmail(e_mail) == 0)
             {
                 MessageBox.Show("Email ja existe!! Tente outro!",
@@ -105,6 +113,8 @@ namespace SistemaMarques
                                 MessageBoxIcon.Exclamation);
                 return;
             }
+
+
             Thread Mensagem = new Thread(() =>
             {
                 MessageBox.Show("Enviando Código de validação por Email\nAguarde...");

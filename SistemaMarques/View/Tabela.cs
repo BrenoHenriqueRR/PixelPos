@@ -329,25 +329,54 @@ namespace SistemaMarques
                     + err.Message);
             }
         }
-       /* private int GetTotalItemsCount()
+
+        private void btninserir_Click(object sender, EventArgs e)
         {
             Connection conn = new Connection();
             SqlCommand sqlCom = new SqlCommand();
 
-            sqlCom.Connection = conn.ReturnConnection();
-            // Use SqlCommand para contar o número total de itens
-            sqlCom.CommandText = ("SELECT COUNT(*) FROM Imagens");
-            return Convert.ToInt32(sqlCom.ExecuteScalar());
-
-        }*/
-     /*   private void btnvoltar_Click(object sender, EventArgs e)
-        {
-            if (currentPage > 0)
+            if (lvtabela.SelectedItems.Count > 0)
             {
-                currentPage--;
-                lvtabela.VirtualListSize = GetTotalItemsCount(); // Atualize a lista virtual
-                lvtabela.Refresh();
+                OpenFileDialog openFileDialog = new OpenFileDialog();
+                openFileDialog.Filter = "Arquivos de imagem|*.jpg;*.jpeg;*.png;*.gif;*.bmp|Todos os arquivos|*.*";
+                openFileDialog.Multiselect = true;
+                openFileDialog.Title = "Selecione uma imagem";
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK && openFileDialog.FileNames.Length > 0)
+                {
+                    foreach (var caminhoImagem in openFileDialog.FileNames)
+                    {
+                        sqlCom.Connection = conn.ReturnConnection();
+
+                        ListViewItem lvid = lvtabela.SelectedItems[0];
+                        string sid = lvid.SubItems[0].Text;
+                        int editarid = Convert.ToInt32(sid);
+                        exibir_inserir inserir = new exibir_inserir();
+                        try
+                        {
+                            inserir.InserirCaminhoNoBanco(caminhoImagem, editarid);
+                        }
+                        catch (Exception err)
+                        {
+                            throw new Exception("Erro: Problemas ao inserir colaborador no banco.\n"
+                                + err.Message);
+                        }
+
+                    }
+                    MessageBox.Show(
+                            "Fotos/s Inserida/s com Sucesso",
+                            "",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Information
+                           );
+                }
+                else
+                {
+                    MessageBox.Show("Nenhuma imagem selecionada.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
             }
-        }*/
+        }
+
     }
 }

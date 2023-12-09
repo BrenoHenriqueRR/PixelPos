@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemaMarques.Controller;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -56,7 +57,13 @@ namespace SistemaMarques.View
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Email email = new Email();
 
+            if (!email.IsValidEmail(txbemail_cli.Text))
+            {
+                MessageBox.Show("Email Invalido!, Insira novamente", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             Connection conn = new Connection();
             SqlCommand sqlCom = new SqlCommand();
             sqlCom.Connection = conn.ReturnConnection();

@@ -31,13 +31,11 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Relatorio));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.RichTextBox1 = new System.Windows.Forms.RichTextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnexcel = new System.Windows.Forms.Button();
@@ -53,7 +51,6 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btnexcel);
@@ -63,18 +60,6 @@
             this.panel1.Size = new System.Drawing.Size(1119, 475);
             this.panel1.TabIndex = 0;
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Firebrick;
-            this.button1.Location = new System.Drawing.Point(810, 421);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(269, 33);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Gerar PDF";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Visible = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -83,7 +68,6 @@
             this.panel2.Controls.Add(this.RichTextBox1);
             this.panel2.Controls.Add(this.button3);
             this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(28, 27);
             this.panel2.Name = "panel2";
@@ -106,7 +90,7 @@
             // 
             this.RichTextBox1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.RichTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.RichTextBox1.Location = new System.Drawing.Point(178, 91);
+            this.RichTextBox1.Location = new System.Drawing.Point(242, 140);
             this.RichTextBox1.Name = "RichTextBox1";
             this.RichTextBox1.Size = new System.Drawing.Size(50, 44);
             this.RichTextBox1.TabIndex = 7;
@@ -133,23 +117,13 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(18, 133);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(189, 20);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Quantidade de Fotos:";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(18, 91);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(16, 132);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(143, 20);
+            this.label2.Size = new System.Drawing.Size(230, 32);
             this.label2.TabIndex = 0;
             this.label2.Text = "Albuns Criados:";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -248,13 +222,11 @@
         private System.Windows.Forms.Button btnexcel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.NotifyIcon ntiexcel;
         private System.Windows.Forms.RichTextBox RichTextBox1;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.HelpProvider helpProvider1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label3;

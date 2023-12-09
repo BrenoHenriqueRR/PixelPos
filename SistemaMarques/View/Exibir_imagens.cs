@@ -33,30 +33,27 @@ namespace SistemaMarques.View
             while (sql2.Read())
             {
                 int idAlbum = sql2.GetInt32(sql2.GetOrdinal("id"));
-                sqlCom.Parameters.Clear(); // Limpar parâmetros anteriores
+                sqlCom.Parameters.Clear(); 
                 sqlCom.CommandText = "SELECT caminho_foto FROM fotos where id_album = @id_album ";
                 sqlCom.Parameters.AddWithValue("@id_album", idAlbum);
 
-                // Executar a consulta SQL dentro do loop
                 using (SqlDataReader dr = sqlCom.ExecuteReader())
                 {
                     while (dr.Read())
                     {
                         string caminhoImagem = dr.GetString(0);
 
-                        // Converta o caminho da imagem em um objeto Image
+                        // Converte o caminho da imagem em um objeto Image
                         Image imagem = Image.FromFile(caminhoImagem);
 
-                        // Adicione a imagem ao ImageList
+                        // Adiciona a imagem ao ImageList
                         ilimagens.Images.Add(imagem);
 
                         ListViewItem item = new ListViewItem();
                         item.ImageIndex = ilimagens.Images.Count - 1;
                         lvimagens.Items.Add(item);
-                        //int pontoDeCorte = 32; // O índice até o qual você quer manter os caracteres
-
-                         //   string resultado = caminhoImagem.Substring(pontoDeCorte);
-                            item.Text = caminhoImagem;
+  
+                        item.Text = caminhoImagem;
                     }
                 }
             }
@@ -129,9 +126,8 @@ namespace SistemaMarques.View
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Information
                        );
-                   
+
                         lvimagens.Items.RemoveAt(lvimagens.Items.IndexOf(selectedItem));
-                        ilimagens.Images.RemoveAt(selectedItem.ImageIndex);
                     }
                     catch (Exception err)
                     {
@@ -148,6 +144,11 @@ namespace SistemaMarques.View
                     return;
                 }
             }
+        }
+
+        private void btnvoltar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

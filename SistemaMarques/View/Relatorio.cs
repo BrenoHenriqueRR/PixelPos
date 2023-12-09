@@ -46,31 +46,31 @@ namespace SistemaMarques.View
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Relatorio_Load(sender, e);
-            Connection conn = new Connection();
-            SqlCommand sqlCom = new SqlCommand();
+            
+                Relatorio_Load(sender, e);
+                Connection conn = new Connection();
+                SqlCommand sqlCom = new SqlCommand();
 
-            DateTime dataInicio = mcData.SelectionRange.Start;
-            DateTime dataFim = mcData.SelectionRange.End;
+                DateTime dataInicio = mcData.SelectionRange.Start;
+                DateTime dataFim = mcData.SelectionRange.End;
 
-            string dataFormatadaI = dataInicio.ToString("yyyy/MM/dd HH:mm:ss");
-            string dataFormatadaF = dataFim.ToString("yyyy/MM/dd HH:mm:ss");
+                string dataFormatadaI = dataInicio.ToString("yyyy/MM/dd HH:mm:ss");
+                string dataFormatadaF = dataFim.ToString("yyyy/MM/dd HH:mm:ss");
 
-            sqlCom.Connection = conn.ReturnConnection();
-            sqlCom.CommandText = @" Set dateformat ymd
+                sqlCom.Connection = conn.ReturnConnection();
+                sqlCom.CommandText = @" Set dateformat ymd
                                     SELECT COUNT(*) as TotalAlbuns 
                                     FROM Imagens 
                                     WHERE album_criacao >= @datainicial 
                                     AND album_criacao <= @datafinal";
-            sqlCom.Parameters.AddWithValue("@datainicial", dataFormatadaI);
-            sqlCom.Parameters.AddWithValue("@datafinal", dataFormatadaF);
-            SqlDataReader dr = sqlCom.ExecuteReader();
-            while (dr.Read())
-            {
-                RichTextBox1.Text = dr["TotalAlbuns"].ToString();
-            }
-            //ListViewItem lv = new ListViewItem(dr["Totalalbuns"].ToString());
-            //lvalbunscriados.Items.Add(lv);
+                sqlCom.Parameters.AddWithValue("@datainicial", dataFormatadaI);
+                sqlCom.Parameters.AddWithValue("@datafinal", dataFormatadaF);
+                SqlDataReader dr = sqlCom.ExecuteReader();
+                while (dr.Read())
+                {
+                    RichTextBox1.Text = dr["TotalAlbuns"].ToString();
+                }
+                conn.CloseConnection();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -136,10 +136,6 @@ namespace SistemaMarques.View
 
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            PDF pdf = new PDF();
-            pdf.gerar_pdf();
-        }
+
     }
 }

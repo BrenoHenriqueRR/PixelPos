@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Exibir_imagens));
             this.ilimagens = new System.Windows.Forms.ImageList(this.components);
             this.pnexibiri = new System.Windows.Forms.Panel();
+            this.btnvoltar = new System.Windows.Forms.Button();
             this.btnexcluir = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lbrelatorio = new System.Windows.Forms.Label();
@@ -49,6 +50,7 @@
             // pnexibiri
             // 
             this.pnexibiri.BackColor = System.Drawing.Color.White;
+            this.pnexibiri.Controls.Add(this.btnvoltar);
             this.pnexibiri.Controls.Add(this.btnexcluir);
             this.pnexibiri.Controls.Add(this.panel3);
             this.pnexibiri.Controls.Add(this.lvimagens);
@@ -58,6 +60,18 @@
             this.pnexibiri.Size = new System.Drawing.Size(1063, 626);
             this.pnexibiri.TabIndex = 0;
             this.pnexibiri.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // btnvoltar
+            // 
+            this.btnvoltar.BackColor = System.Drawing.Color.DarkGreen;
+            this.btnvoltar.ForeColor = System.Drawing.Color.White;
+            this.btnvoltar.Location = new System.Drawing.Point(22, 127);
+            this.btnvoltar.Name = "btnvoltar";
+            this.btnvoltar.Size = new System.Drawing.Size(94, 39);
+            this.btnvoltar.TabIndex = 4;
+            this.btnvoltar.Text = "Voltar";
+            this.btnvoltar.UseVisualStyleBackColor = false;
+            this.btnvoltar.Click += new System.EventHandler(this.btnvoltar_Click);
             // 
             // btnexcluir
             // 
@@ -128,5 +142,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label lbrelatorio;
         private System.Windows.Forms.Button btnexcluir;
+        private System.Windows.Forms.Button btnvoltar;
     }
 }

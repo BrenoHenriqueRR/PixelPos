@@ -6,6 +6,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
+using System.Text.RegularExpressions;
 
 namespace SistemaMarques.Controller
 {
@@ -82,6 +83,18 @@ namespace SistemaMarques.Controller
             string testehtml = HTMLEmail;
             return testehtml;
 
+        }
+
+        public bool IsValidEmail(string email)
+        {
+            //string para validar o formato do email
+            string pattern = @"^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$";
+
+            // Cria um objeto Regex com a string
+            Regex regex = new Regex(pattern);
+
+            // Testa o e-mail com o regex
+            return regex.IsMatch(email);
         }
     }
 }

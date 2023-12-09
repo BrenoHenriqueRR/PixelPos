@@ -60,7 +60,7 @@
             this.txbnomealbum.Location = new System.Drawing.Point(18, 519);
             this.txbnomealbum.Name = "txbnomealbum";
             this.txbnomealbum.Size = new System.Drawing.Size(529, 22);
-            this.txbnomealbum.TabIndex = 7;
+            this.txbnomealbum.TabIndex = 3;
             // 
             // label1
             // 
@@ -77,7 +77,7 @@
             this.txbnomecli.Location = new System.Drawing.Point(27, 197);
             this.txbnomecli.Name = "txbnomecli";
             this.txbnomecli.Size = new System.Drawing.Size(529, 22);
-            this.txbnomecli.TabIndex = 9;
+            this.txbnomecli.TabIndex = 1;
             // 
             // label2
             // 
@@ -105,7 +105,8 @@
             this.txbemailcli.Location = new System.Drawing.Point(27, 345);
             this.txbemailcli.Name = "txbemailcli";
             this.txbemailcli.Size = new System.Drawing.Size(529, 22);
-            this.txbemailcli.TabIndex = 12;
+            this.txbemailcli.TabIndex = 2;
+            this.txbemailcli.TextChanged += new System.EventHandler(this.txbemailcli_TextChanged);
             // 
             // panel3
             // 

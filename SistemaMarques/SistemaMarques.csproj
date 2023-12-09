@@ -151,12 +151,17 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="View\cliente_imagens.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\cliente_imagens.Designer.cs">
+      <DependentUpon>cliente_imagens.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controller\CriarHash.cs" />
     <Compile Include="Controller\Email.cs" />
     <Compile Include="Controller\Excel.cs" />
     <Compile Include="Controller\GerarSenha.cs" />
     <Compile Include="Controller\pastadownload.cs" />
-    <Compile Include="Controller\PDF.cs" />
     <Compile Include="Controller\Usuario.cs" />
     <Compile Include="PixelPOSDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -200,12 +205,6 @@
     <Compile Include="View\exibir_inserir.Designer.cs">
       <DependentUpon>exibir_inserir.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Imagens.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Imagens.Designer.cs">
-      <DependentUpon>Imagens.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\RecuperarSenha.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -247,6 +246,9 @@
     <EmbeddedResource Include="View\Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\cliente_imagens.resx">
+      <DependentUpon>cliente_imagens.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Editar.resx">
       <DependentUpon>Editar.cs</DependentUpon>
     </EmbeddedResource>
@@ -261,9 +263,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\exibir_inserir.resx">
       <DependentUpon>exibir_inserir.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Imagens.resx">
-      <DependentUpon>Imagens.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\RecuperarSenha.resx">
       <DependentUpon>RecuperarSenha.cs</DependentUpon>
