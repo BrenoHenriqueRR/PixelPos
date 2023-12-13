@@ -58,7 +58,6 @@ namespace SistemaMarques.View
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information
                     );
-                    this.Close();
                 }
                 catch(Exception ex)
                 {

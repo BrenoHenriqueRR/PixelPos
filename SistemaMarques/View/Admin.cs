@@ -24,6 +24,7 @@ namespace SistemaMarques
             this.MaximizeBox = false;
         }
 
+        //cria a variavel form para armezanar as outras telas dentro do painel
         private void Biblioteca_Load(Form frm)
         {
             bibliotecaClose();
@@ -41,6 +42,7 @@ namespace SistemaMarques
             }
         }
 
+        //muda a cor quando aperta em um dos menus
         private void AtivarBotao(Button frmAtivo)
         {
             foreach (Control ctrl in pnopcoes.Controls)
@@ -88,6 +90,7 @@ namespace SistemaMarques
 
         }
 
+
         private void btnExcluir_Click(object sender, EventArgs e)
         {
             AtivarBotao(btnajuda);
@@ -103,6 +106,7 @@ namespace SistemaMarques
             Relatorio relatorio = new Relatorio();  
             Biblioteca_Load(relatorio);
         }
+
     }
 }
  
