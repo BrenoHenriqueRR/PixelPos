@@ -31,10 +31,10 @@
             this.pnajuda = new System.Windows.Forms.Panel();
             this.lbajuda = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.lbcalendar = new System.Windows.Forms.Label();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.lbcalendar = new System.Windows.Forms.Label();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.pnajuda.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -72,17 +72,26 @@
             this.panel1.TabIndex = 4;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // richTextBox1
+            // label1
             // 
-            this.richTextBox1.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox1.Location = new System.Drawing.Point(74, 72);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(311, 286);
-            this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "\nPara selecionar de uma data até a outra no calendário é necessário segurar o \nbo" +
-    "tão shift do teclado.\n\n\nQuando desejar selecionar apenas um dia no calendário, c" +
-    "oloque ele e o próximo dia";
-            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(779, 47);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(98, 22);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Biblioteca";
+            // 
+            // richTextBox2
+            // 
+            this.richTextBox2.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox2.Location = new System.Drawing.Point(687, 72);
+            this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.ReadOnly = true;
+            this.richTextBox2.Size = new System.Drawing.Size(311, 286);
+            this.richTextBox2.TabIndex = 4;
+            this.richTextBox2.Text = "\nQuando fizer um pesquisa e quiser retornar a mostrar tudo basta clickar na lupa " +
+    "\n\n\nSelecione uma linha antes de apertar o botão desejado";
             // 
             // lbcalendar
             // 
@@ -94,25 +103,18 @@
             this.lbcalendar.TabIndex = 3;
             this.lbcalendar.Text = "CALENDÁRIO";
             // 
-            // richTextBox2
+            // richTextBox1
             // 
-            this.richTextBox2.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox2.Location = new System.Drawing.Point(687, 72);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(311, 286);
-            this.richTextBox2.TabIndex = 4;
-            this.richTextBox2.Text = "\nQuando fizer um pesquisa e quiser retornar a mostrar tudo basta clickar na lupa " +
-    "\n\n\nSelecione uma linha antes de apertar o botão desejado";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(779, 47);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(98, 22);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Biblioteca";
+            this.richTextBox1.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox1.Location = new System.Drawing.Point(74, 72);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
+            this.richTextBox1.Size = new System.Drawing.Size(311, 286);
+            this.richTextBox1.TabIndex = 0;
+            this.richTextBox1.Text = "\nPara selecionar de uma data até a outra no calendário é necessário segurar o \nbo" +
+    "tão shift do teclado.\n\n\nQuando desejar selecionar apenas um dia no calendário, c" +
+    "oloque ele e o próximo dia";
+            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
             // Ajuda
             // 
